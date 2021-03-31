@@ -5,7 +5,6 @@
 \usage{
 fun_gas_transfer_velocity(sc, wspd2)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{sc}{Schmidt number (unitless). Provided in the fwoxy.R code.}
   \item{wspd2}{Windspeed squared (m^2/s^2). Provided in the fwoxy.R code.}
