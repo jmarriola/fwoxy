@@ -1,17 +1,21 @@
-# Adapted from Matlab code, Jill Arriola, 2021-03-16
+# Seawater density calculation
+#
+# Adapted from Matlab code by Jill Arriola, 2021-03-16
+#
 # THIS FUNCTION COMPUTES DENSITY OF SEAWATER ACCORDING TO THE
-# INTERNATIONALLY ACCEPTED (UNESCO) EQUATIONS. THESE
-# EQUATIONS ARE CITED IN MILLERO AND POISSON, DEEP-SEA RESEARCH,
-# 28A, 625-629, 1981.                                                   
-
+# INTERNATIONALLY ACCEPTED (UNESCO) EQUATIONS.
+#
+# Reference:
+# MILLERO AND POISSON, DEEP-SEA RESEARCH, 28A, 625-629, 1981.
+#
 # THE STANDARD ERROR OF THIS EQUATION IS 3.6 X 10-3 KG/M-3.
-
+#
 # INPUTS ARE
-# temp = Temperature (DEG. C)
+# temp = Water Temperature (DEG. C)
 # salt = Salinity (PPT)
 # P = Pressure above atmospheric (dbar)
-
-# OUTPUT IS RHO = Density (kg/m3)
+#
+# OUTPUT IS RHO = Density (kg/m^3)
 
 fun_density <- function(temp,salt,P){
 
@@ -49,9 +53,9 @@ A2 = 1.91075e-4
 BW = 8.50935e-5 - 6.12293e-6*temp + 5.2787e-8*T2
 B1 = -9.9348e-7 + 2.0816e-8*temp + 9.1697e-10*T2
 
-K = K0 + salt*KA + S32*KB + P1*(AW + salt*A1 + S32*A2) + P2*(BW + salt*B1)                                                      
+K = K0 + salt*KA + S32*KB + P1*(AW + salt*A1 + S32*A2) + P2*(BW + salt*B1)
 
-RHO = RHOP/(1-P1/K) 
+RHO = RHOP/(1-P1/K)
 
 return(RHO)
 
