@@ -1,57 +1,14 @@
 \name{fun_eqb_oxygen}
 \alias{fun_eqb_oxygen}
-%- Also NEED an '\alias' for EACH other topic documented here.
-\title{
-%%  ~~function to do ... ~~
-}
-\description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
-}
-\usage{
-fun_eqb_oxygen(x)
-}
-%- maybe also 'usage' for other objects documented here.
+\title{Oxygen saturation}
+\description{Calculates the oxygen equilibrium in seawater and determines if the water column is under or super saturated. Uses seawater density from fun_density.R function.}
+\usage{fun_eqb_oxygen(temp, salt)}
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
-}
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
+  \item{temp}{Water temperature in degrees Celsius}
+  \item{salt}{Salinity of seawater in parts per thousand}}
+\value{Returned value is oxysat = Oxygen saturation in mmol/m^3
+\references{Garcia, H., and L.I. Gordon (1992), Oxygen solubility in seawater: Better fitting equations, Limnol. Oceanogr., 376, 1307-1312.}
+\author{Original code written in Matlab by Raymond Najjar, adapted by Maria Herrmann, converted to R code by Jill Arriola.}
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
-\examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+\code{\link}{fun_density}} for seawater density calculation.
 
-## The function is currently defined as
-function (x)
-{
-  }
-}
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
