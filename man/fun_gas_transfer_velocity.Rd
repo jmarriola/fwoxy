@@ -1,57 +1,16 @@
 \name{fun_gas_transfer_velocity}
 \alias{fun_gas_transfer_velocity}
-%- Also NEED an '\alias' for EACH other topic documented here.
-\title{
-%%  ~~function to do ... ~~
-}
-\description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
-}
+\title{Gas transfer velocity}
+\description{A calculation of the gas transfer velocity across the air-sea interface based on inputs of a Schmidt number and windspeed. Inputs are taken directly from the fwoxy.R code and are not explicitly given.}
 \usage{
-fun_gas_transfer_velocity(x)
+fun_gas_transfer_velocity(sc, wspd2)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
+  \item{sc}{Schmidt number (unitless). Provided in the fwoxy.R code.}
+  \item{wspd2}{Windspeed squared (m^2/s^2). Provided in the fwoxy.R code.}
 }
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
+\value{kw (m/s) as the gas transfer velocity}
+\references{WANNINKHOF, R., LIMNOLOGY AND OCEANOGRAPHY METHODS, 12(6), 351-362, 2014.}
+\author{Orginally written in Matlab by Maria Herrmann, converted to R code by Jill Arriola.}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
-\examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (x)
-{
-  }
-}
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
