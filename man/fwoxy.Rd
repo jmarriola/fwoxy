@@ -1,23 +1,32 @@
 \name{fwoxy}
 \alias{fwoxy}
-%- Also NEED an '\alias' for EACH other topic documented here.
-\title{
-%%  ~~function to do ... ~~
-}
-\description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
-}
+\alias{fwoxy.default}
+\title{Forward oxygen model}
+\description{Based on the Odum (1956) open water method, this forward model predicts a future oxygen time series based on initial conditions, such as the concentration of oxygen, ecosystem respiration, windspeed, light efficiency, temperature, salinity, and height of the well-mixed water column. The model outputs a 6 day time series of oxygen concentration, time rate of change of oxygen, ecosystem respiration, and PAR.}
 \usage{
-fwoxy(x)
+fwoxy(run_name, ...)
+
+\method{fwoxy}{default}(
+  run_name,
+  a_param = 0.2,
+  er_param = 20,
+  ht_const = 3,
+  salt_const = 25,
+  temp_const = 25,
+  wspd_const = 3,
+  ...
+)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
-}
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
+  \item{run_name}{Input name to keep track of which run of the model was performed, must be in ''}
+  \item{...}{arguments passed to or from other methods}
+  \item{a_param}{Light efficiency ((mmol/m^3)/day)/(W/m^2))}
+  \item{er_param}{Ecosystem respiration (mmol/m^3/day)}
+  \item{ht_const}{Depth of the well-mixed water column (m)}
+  \item{salt_const}{Salinity of the seawater (ppt)}
+  \item{temp_const}{Water temperature (degrees C)}
+  \item{wespd_const}{Wind speed at 10m height (m/s)}
 }
 \value{
 %%  ~Describe the value returned
@@ -26,32 +35,32 @@ fwoxy(x)
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
+\references{Odum, H.T. (1956) Primary production in flowing waters 1. Limnology and Oceanography, 1(2), 102-117.}
+\author{Originally written in Matlab by Maria Herrmann, converted to R code by Jill Arriola}
+\note{Positive gas flux is from water to air.}
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{fun_density}}
+\code{\link{fun_eqb_oxygen}}
+\code{\link{fun_gas_transfer_velocity}}
+\code{\link{fun_par_sin_model}}
+\code{\link{fun_schmidt_oxygen}}
 }
-\examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
 
-## The function is currently defined as
-function (x)
-{
-  }
+\examples{
+\dontrun{
+# Model run name
+run_name <- 'example'
+
+# Set model parameters
+a_param <- 0.2
+er_param <- 20
+
+# Set model forcings
+ht_const <- 3
+salt_const <- 25
+temp_const <- 25
+wspd_const <- 3
+
+metab <- fwoxy(run_name = run_name, a_param = a_param, er_param = er_param, ht_const = ht_const, salt_const = salt_const, temp_const = temp_const, wspd_const = wspd_const)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

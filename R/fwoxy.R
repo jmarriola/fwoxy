@@ -1,6 +1,4 @@
-# 2021-03-10, Maria Herrmann
-# 2021-03-16 adapted from Matlab to R, Jill Arriola
-# Main program for the forward oxygen model (foxym)
+# Main program for the forward oxygen model (fwoxy)
 
 # OXYGEN BUDGET: TROC = GPP - ER - GASEX
 # Positive gas flux is from water to air
@@ -17,10 +15,10 @@
 # OUTPUT: oxygen concentration, TROC, GPP, ER, GASEX
 
 # Setting Parameters ------------------------------------------------------
-library(ggplot2)            # Only need if plotting in ggplot, bottom of code
-library(tidyr)
-# Model run name
+# library(ggplot2)
+# library(tidyr)
 
+# Model run name
 run_name <- 'base_run'      # Set unique so you know which run you just did
 
 # Model inputs

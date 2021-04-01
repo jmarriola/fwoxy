@@ -1,21 +1,63 @@
 ---
-title: "fwoxy"
-author: "Jill Arriola"
 output: pdf_document
 ---
+#fwoxy.R
 
+####Jill M. Arriola and Maria Herrmann
+#####[jva5648@psu.edu]
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
 ###Description  
-This R package, **fwoxy**, is a simple forward model of an idealized estuarine dissolved oxygen time series and the resulting net ecosystem metabolism, i.e. gross primary productivity, ecosystem respiration, and air-sea gas exchange. The primary use of this model is meant to be as a lab component for a marine biogeochemistry course to further understanding of biogeochemical and physical processes that influence estuary metabolism.  
+This R package, **fwoxy**, is a simple forward model of an idealized estuarine dissolved oxygen time series and the resulting net ecosystem metabolism, i.e. gross primary productivity, ecosystem respiration, and air-sea gas exchange. The forward model is based on the Odum (1956) open water method, which determines net ecosystem metabolism of an estuary using a measured dissolved oxygen time series of a well-mixed water column. The primary use of this model is as a lab component for a marine biogeochemistry course to further understanding of biogeochemical and physical processes that influence the health of an estuary.  
+
+
+The development version of this package can be installed from Github:
+
+```{r, eval = FALSE}
+install.packages('devtools')
+library(devtools)
+install_github('jmarriola/fwoxy')
+```
+
+After installation of the fwoxy.R package, install and load libraries for packages **ggplot2** and **tidyr** to ensure smooth running of the package:
+```{r, eval = FALSE}
+install.packages('ggplot2')
+install.packages('tidyr')
+```
 
 ####Functions  
 There are six functions included in this package:  
-1. fun_density.R -   
-2. fun_eqb_oxygen.R -   
-3. fun_gas_transfer_velocity.R -   
-4. fun_par_sin_model.R -   
-5. fun_schmidt_oxygen.R -   
-6. fwoxy.R - The main function which sources the prior listed functions and runs the model.  
+1. fun_density.R -  Calculates the density of seawater.   
+2. fun_eqb_oxygen.R -  Determines the oxygen saturation, or difference in oxygen equilibrium between the water column and air.   
+3. fun_gas_transfer_velocity.R -  Estimates the gas transfer velocity of oxygen across the air-sea interface.  
+4. fun_par_sin_model.R -  Creates the PAR signal using a sin wave model.  
+5. fun_schmidt_oxygen.R -  Determines the Schmidt number, a unitless number used in calculating gas transfer velocity.   
+6. fwoxy.R - The main function which sources the prior listed functions and runs the forward oxygen model.    
+
+**Note:** Functions 1 - 5 are sourced by the fwoxy.R function and do not need to be called separately. These functions should not be modified on their own.
+
+####Running fwoxy  
+Before identifying parameters for the model, load associated libraries needed fo **fwoxy.R** to run:
+```{r, eval = FALSE}
+install.packages('ggplot2')
+install.packages('tidyr')
+```
+
+#####Parameters and forcings of the model
+Choose and set the name of the model run as **run_name** so that the output .csv file will be recognizable (e.g. 'run01' or 'fwoxy_01'). The .csv extension is added later in the function.    
+
+Next, set the parameters of the light efficiency (**a_param**) and ecosystem respiration (**er_param**). Default settings for **a_param** and **er_param** are 0.2 ((mmol/m^3)/day)/(W/m^2)) and 20 (mmol/m^3/day), respectively.  
+```{r, eval = FALSE}
+# Model run name
+run_name <- 'example'
+
+# Set model parameters
+a_param <- 0.2
+er_param <- 20
+
+```
+
+  
+
+
