@@ -75,7 +75,7 @@ Recommendations for the ranges of the input parameters and forcings and their de
 |:---:|:---:|:---:|:---:|
 |a_param|0.1|1.0|0.2|
 |er_param|0|80|20|
-|ht_const|0.5|2.0|3.0|
+|ht_const|0.5|5.0|3.0|
 |salt_const|5|35|25|
 |temp_const|15|30|25|
 |wspd_const|0|6|3|
@@ -89,8 +89,11 @@ example <- fwoxy(run_name = run_name, a_param = a_param, er_param = er_param,
 ```
 
 ##Outputs
-The forward model will output a .csv file to the working drive with the **run_name** input you set as the file name. In addition to the .csv file, the function will create two plots (see below). The first is the forward oxygen concentration time series versus time, the second is of the time rate of change of oxygen (dcdtd), the ecosystem respiration (erd), the gas exchange (gasexd), and the gross primary productivity (gppd) versus time. These plots will not be automatically output to the working drive and will need to be saved by the user.  
+The forward model will output a .csv file to the working drive with the **run_name** input you set as the file name. In addition to the .csv file, the function will create two plots (see below). The first is the forward oxygen concentration time series versus time. This plot illustrates how the dissolved oxygen concentration (mmol/m^3^) in the water column will change due to the parameters and forcings of the model.   
+
 ![Oxygen concentration](base_run_oxy.jpeg)  
   
+The second plot is of daily fluxes (mmol/m^3^/day) of the time rate of change of oxygen (dcdtd), the ecosystem respiration (erd), the gas exchange (gasexd), and the gross primary productivity (gppd) versus time. Neither of these plots will be automatically output to the working drive and will need to be saved by the user.  
+
 ![Fluxes](base_run_fluxes.jpeg)
 
