@@ -4,7 +4,7 @@ output: github_document
 #fwoxy.R
 
 ####Jill M. Arriola and Maria Herrmann
-#####[jva5648@psu.edu]
+#####Email: jva5648@psu.edu
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
