@@ -13,13 +13,12 @@
 # INPUT: run name, time variables, initial conditions, forcing, parameters
 
 # OUTPUT: oxygen concentration, TROC, GPP, ER, GASEX
+fwoxy <- function(run_name, a_param, er_param, ht_const, salt_const, temp_const, wspd_const)
+{
 
 # Setting Parameters ------------------------------------------------------
 # library(ggplot2)
 # library(tidyr)
-
-# Model run name
-run_name <- 'base_run'      # Set unique so you know which run you just did
 
 # Model inputs
 # Time variables, DO NOT CHANGE
@@ -28,17 +27,6 @@ dt_min <- 15            # time step in minutes
 
 # Initial conditions: starting oxygen concentration
 oxy_ic <- 250           # mmol/m3 (1 mmol/m3 = 1 uM)
-
-# Forcing
-ht_const <- 3           # m height of the water column
-wspd_const <- 3         # m/s, wind speed at 10 m
-temp_cons <- 25         # degC, water temperature
-salt_const <- 25        # ppt, salinity
-# No pressure because water column is shallow, therefore P = 0 in function arguments
-
-# Parameters
-a_param <- 0.2          # (mmol/m3)/day)/(W/m2), light use efficiency parameter for gpp
-er_param <- 20          # mmol/m3/day, ecosystem respiration parameter
 
 # Conversion factors, DO NOT CHANGE
 spm <- 60               # seconds per minute
@@ -171,6 +159,6 @@ ggplot(resultsNew, aes(x = t, y = Value, group = Variables, color = Variables)) 
   labs(x = "Hour of day", y = "Flux, mmol/m3/day") +
   scale_color_manual(values = colors) +
   scale_x_continuous(breaks = seq(1,518400,by=43200), labels = c('1'='0','43201'='12','86401'='0','129601'='12','172801'='0','216001'='12','259201'='0','302401'='12','345601'='0','388801'='12','432001'='0','475201'='12'))
-
+}
 
 
