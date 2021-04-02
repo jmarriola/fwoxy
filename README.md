@@ -29,12 +29,12 @@ install.packages('tidyr')
 ### Functions
 
 There are six functions included in this package:
-**1.** fun\_density.R - Calculates the density of seawater.
-**2.** fun\_eqb\_oxygen.R - Determines the oxygen equilibrium between the water column and air.
-**3.** fun\_gas\_transfer\_velocity.R - Estimates the gas transfer velocity across the air-sea interface.
-**4.** fun\_par\_sin\_model.R - Creates the PAR signal using a sin wave model.
-**5.** fun\_schmidt\_oxygen.R - Determines the Schmidt number, a unitless number used in calculating gas transfer velocity.
-**6.** fwoxy.R - The main function which sources the prior listed functions and runs the forward oxygen model.
+1. fun\_density.R - Calculates the density of seawater.
+2. fun\_eqb\_oxygen.R - Determines the oxygen equilibrium between the water column and air.
+3. fun\_gas\_transfer\_velocity.R - Estimates the gas transfer velocity across the air-sea interface.
+4. fun\_par\_sin\_model.R - Creates the PAR signal using a sin wave model.
+5. fun\_schmidt\_oxygen.R - Determines the Schmidt number, a unitless number used in calculating gas transfer velocity.
+6. fwoxy.R - The main function which sources the prior listed functions and runs the forward oxygen model.
 
 **Note:** Functions 1 - 5 are sourced by the fwoxy.R function and do not need to be called separately. These functions should not be modified on their own.
 

@@ -38,13 +38,15 @@ body {
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">'ggplot2'</span>)
 <span class="kw">install.packages</span>(<span class="st">'tidyr'</span>)</code></pre></div>
 <h3 id="functions">Functions</h3>
-<p>There are six functions included in this package:<br />
-<strong>1.</strong> fun_density.R - Calculates the density of seawater.<br />
-<strong>2.</strong> fun_eqb_oxygen.R - Determines the oxygen equilibrium between the water column and air.<br />
-<strong>3.</strong> fun_gas_transfer_velocity.R - Estimates the gas transfer velocity across the air-sea interface.<br />
-<strong>4.</strong> fun_par_sin_model.R - Creates the PAR signal using a sin wave model.<br />
-<strong>5.</strong> fun_schmidt_oxygen.R - Determines the Schmidt number, a unitless number used in calculating gas transfer velocity.<br />
-<strong>6.</strong> fwoxy.R - The main function which sources the prior listed functions and runs the forward oxygen model.</p>
+<p>There are six functions included in this package:</p>
+<ol>
+<li>fun_density.R - Calculates the density of seawater.</li>
+<li>fun_eqb_oxygen.R - Determines the oxygen equilibrium between the water column and air.</li>
+<li>fun_gas_transfer_velocity.R - Estimates the gas transfer velocity across the air-sea interface.</li>
+<li>fun_par_sin_model.R - Creates the PAR signal using a sin wave model.</li>
+<li>fun_schmidt_oxygen.R - Determines the Schmidt number, a unitless number used in calculating gas transfer velocity.</li>
+<li>fwoxy.R - The main function which sources the prior listed functions and runs the forward oxygen model.</li>
+</ol>
 <p><strong>Note:</strong> Functions 1 - 5 are sourced by the fwoxy.R function and do not need to be called separately. These functions should not be modified on their own.</p>
 <h2 id="running-fwoxy">Running fwoxy</h2>
 <p>Before identifying parameters for the model, load associated libraries needed for fwoxy.R to run:</p>
