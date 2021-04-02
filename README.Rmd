@@ -73,8 +73,8 @@ Recommendations for the ranges of the input parameters and forcings and their de
 
 |Input|Min|Max|Default|
 |:---:|:---:|:---:|:---:|
-|a_param|0.0|0.4|0.2|
-|er_param|0|60|20|
+|a_param|0.1|1.0|0.2|
+|er_param|0|80|20|
 |ht_const|0.5|2.0|3.0|
 |salt_const|5|35|25|
 |temp_const|15|30|25|
