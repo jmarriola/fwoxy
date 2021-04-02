@@ -26,7 +26,7 @@ install.packages('ggplot2')
 install.packages('tidyr')
 ```
 
-#### Functions
+### Functions
 
 There are six functions included in this package:
 **1.** fun\_density.R - Calculates the density of seawater.
@@ -48,7 +48,7 @@ library(ggplot2)
 library(tidyr)
 ```
 
-#### Inputs: Parameters and forcings of the model
+### Inputs: Parameters and forcings of the model
 
 Choose and set the name of the model run as **run\_name** so that the output .csv file will be recognizable (e.g. 'run01' or 'fwoxy\_01'). The .csv extension is added later in the function.
 
@@ -88,7 +88,7 @@ Recommendations for the ranges of the input parameters and forcings and their de
 | temp\_const |  15 |  30 |    25   |
 | wspd\_const |  0  |  6  |    3    |
 
-#### Running the forward model
+### Running the forward model
 
 Once the inputs of **run\_name**, parameters, and the forcings are set, you can now run the model.
 

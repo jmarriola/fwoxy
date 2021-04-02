@@ -26,8 +26,8 @@ install.packages('ggplot2')
 install.packages('tidyr')
 ```
 
-####Functions  
-There are six functions included in this package:  
+###Functions  
+There are six functions included in this package:    
 **1.** fun_density.R -  Calculates the density of seawater.   
 **2.** fun_eqb_oxygen.R -  Determines the oxygen equilibrium between the water column and air.   
 **3.** fun_gas_transfer_velocity.R -  Estimates the gas transfer velocity across the air-sea interface.  
@@ -44,7 +44,7 @@ library(ggplot2)
 library(tidyr)
 ```
 
-####Inputs: Parameters and forcings of the model
+###Inputs: Parameters and forcings of the model
 Choose and set the name of the model run as **run_name** so that the output .csv file will be recognizable (e.g. 'run01' or 'fwoxy_01'). The .csv extension is added later in the function.    
 ```{r, eval = F}
 # Model run name
@@ -80,7 +80,7 @@ Recommendations for the ranges of the input parameters and forcings and their de
 |temp_const|15|30|25|
 |wspd_const|0|6|3|
 
-####Running the forward model
+###Running the forward model
 Once the inputs of **run_name**, parameters, and the forcings are set, you can now run the model. 
 ```{r, eval = F}
 example <- fwoxy(run_name = run_name, a_param = a_param, er_param = er_param,

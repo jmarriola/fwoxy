@@ -37,7 +37,7 @@ body {
 <p>After installation of the fwoxy.R package, install packages <strong>ggplot2</strong> and <strong>tidyr</strong> to ensure smooth running of the package:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">'ggplot2'</span>)
 <span class="kw">install.packages</span>(<span class="st">'tidyr'</span>)</code></pre></div>
-<h4 id="functions">Functions</h4>
+<h3 id="functions">Functions</h3>
 <p>There are six functions included in this package:<br />
 <strong>1.</strong> fun_density.R - Calculates the density of seawater.<br />
 <strong>2.</strong> fun_eqb_oxygen.R - Determines the oxygen equilibrium between the water column and air.<br />
@@ -50,7 +50,7 @@ body {
 <p>Before identifying parameters for the model, load associated libraries needed for fwoxy.R to run:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
 <span class="kw">library</span>(tidyr)</code></pre></div>
-<h4 id="inputs-parameters-and-forcings-of-the-model">Inputs: Parameters and forcings of the model</h4>
+<h3 id="inputs-parameters-and-forcings-of-the-model">Inputs: Parameters and forcings of the model</h3>
 <p>Choose and set the name of the model run as <strong>run_name</strong> so that the output .csv file will be recognizable (e.g. 'run01' or 'fwoxy_01'). The .csv extension is added later in the function.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Model run name</span>
 run_name &lt;-<span class="st"> 'example'</span></code></pre></div>
@@ -114,7 +114,7 @@ salt_const &lt;-<span class="st"> </span><span class="dv">25</span>        <span
 </tr>
 </tbody>
 </table>
-<h4 id="running-the-forward-model">Running the forward model</h4>
+<h3 id="running-the-forward-model">Running the forward model</h3>
 <p>Once the inputs of <strong>run_name</strong>, parameters, and the forcings are set, you can now run the model.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">example &lt;-<span class="st"> </span><span class="kw">fwoxy</span>(<span class="dt">run_name =</span> run_name, <span class="dt">a_param =</span> a_param, <span class="dt">er_param =</span> er_param,
         <span class="dt">ht_const =</span> ht_const, <span class="dt">salt_const =</span> salt_const, <span class="dt">temp_const =</span> temp_const,
