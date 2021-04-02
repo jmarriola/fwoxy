@@ -29,11 +29,12 @@ fwoxy(run_name, ...)
   \item{wespd_const}{Wind speed at 10m height (m/s)}
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+  \item{c}{oxygen concentration (mmol/m^3^)}
+  \item{t}{time step (seconds)}
+  \item{dcdtd}{time rate of change (mmol/m^3/day)}
+  \item{gppd}{gross primary production (mmol/m^3/day)}
+  \item{erd}{ecosystem respiration (mmol/m^3/day)}
+  \item{gasexd}{gas exchange (mmol/m^3/day)}
 }
 \references{Odum, H.T. (1956) Primary production in flowing waters 1. Limnology and Oceanography, 1(2), 102-117.}
 \author{Originally written in Matlab by Maria Herrmann, converted to R code by Jill Arriola}
@@ -62,5 +63,5 @@ salt_const <- 25
 temp_const <- 25
 wspd_const <- 3
 
-metab <- fwoxy(run_name = run_name, a_param = a_param, er_param = er_param, ht_const = ht_const, salt_const = salt_const, temp_const = temp_const, wspd_const = wspd_const)
+example <- fwoxy(run_name = run_name, a_param = a_param, er_param = er_param, ht_const = ht_const, salt_const = salt_const, temp_const = temp_const, wspd_const = wspd_const)
 }
