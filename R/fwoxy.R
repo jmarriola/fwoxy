@@ -151,11 +151,12 @@ write.csv(results, paste0(run_name, '.csv'))
 ## Plots
 
 # Plot of oxygen concentration time series
-ggplot(results, aes(x = t, y = c)) +
+print(ggplot(results, aes(x = t, y = c)) +
   geom_line(colour = "blue") +
   labs(x = "Hour of day", y = "oxy, mmol/m3") +
   theme_bw() +
   scale_x_continuous(breaks = seq(1,518400,by=43200), labels = c('1'='0','43201'='12','86401'='0','129601'='12','172801'='0','216001'='12','259201'='0','302401'='12','345601'='0','388801'='12','432001'='0','475201'='12'))
+)
 
 # A way to plot fluxes, includes legend outside on right
 colors <- c(gasexd = "red3", gppd = "orange", erd = "purple4", dcdtd = "steelblue3")
