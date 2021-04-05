@@ -11,7 +11,7 @@ fun_gas_transfer_velocity(sc, wspd2)
 }
 \value{kw (m/s) as the gas transfer velocity}
 \seealso{
-\code{\link{fun_schmidt_oxygen.R}} for estimating the Schmidt number used in the gas transfer velocity calculation.}
+\code{\link{fun_schmidt_oxygen}} for estimating the Schmidt number used in the gas transfer velocity calculation.}
 \references{WANNINKHOF, R., LIMNOLOGY AND OCEANOGRAPHY METHODS, 12(6), 351-362, 2014.}
 \author{Orginally written in Matlab by Maria Herrmann, converted to R code by Jill Arriola.}
 
