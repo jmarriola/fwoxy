@@ -81,9 +81,14 @@ Recommendations for the ranges of the input parameters and forcings and their de
 |wspd_const|0|6|3|
 
 ###Running the forward model
-Once the inputs of **run_name**, parameters, and the forcings are set, you can now run the model. 
+Once the inputs of **run_name**, parameters, and the forcings are set, you can now run the model. To run the model with the default values you only need to enter in the **run_name** argument:
+```{r, eval = FALSE}
+fwoxy(run_name = 'example')
+```
+
+To include preset values you must then state the other arguments as shown here:
 ```{r, eval = F}
-fwoxy(run_name = run_name, a_param = a_param, er_param = er_param,
+fwoxy(run_name = 'example', a_param = a_param, er_param = er_param,
         ht_const = ht_const, salt_const = salt_const, temp_const = temp_const,
         wspd_const = wspd_const)
 ```
