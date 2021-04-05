@@ -16,7 +16,7 @@ The development version of this package can be installed from Github:
 ``` r
 install.packages('devtools')
 library(devtools)
-install_github('jmarriola/fwoxy')
+devtools::install_github('jmarriola/fwoxy')
 ```
 
 After installation of the fwoxy.R package, install packages **ggplot2** and **tidyr** to ensure smooth running of the package:
