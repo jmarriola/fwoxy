@@ -90,10 +90,10 @@ Recommendations for the ranges of the input parameters and forcings and their de
 
 ### Running the forward model
 
-Once the inputs of **run\_name**, parameters, and the forcings are set, you can now run the model.
+Once the inputs of **run\_name**, parameters, and the forcings are set, you can now run the model. To include the argument values you preset above, you must call them in the function as shown here:
 
 ``` r
-example <- fwoxy(run_name = run_name, a_param = a_param, er_param = er_param,
+fwoxy(run_name, a_param = a_param, er_param = er_param,
         ht_const = ht_const, salt_const = salt_const, temp_const = temp_const,
         wspd_const = wspd_const)
 ```
@@ -101,10 +101,10 @@ example <- fwoxy(run_name = run_name, a_param = a_param, er_param = er_param,
 Outputs
 -------
 
-The forward model will output a .csv file to the working drive with the **run\_name** input you set as the file name. In addition to the .csv file, the function will create two plots (see below). The first is the forward oxygen concentration time series versus time. This plot illustrates how the dissolved oxygen concentration (mmol/m<sup>3</sup>) in the water column will change due to the parameters and forcings of the model.
+The forward model will output a .csv file to the working drive with the **run\_name** input you set as the file name. In addition to the .csv file, the function will create two plots in the Plots view in RStudio (see below). The first figure is the forward oxygen concentration time series versus time. This plot illustrates how the dissolved oxygen concentration (mmol/m<sup>3</sup>) in the water column will change due to the parameters and forcings of the model.
 
 ![Oxygen concentration](base_run_oxy.jpeg)
 
-The second plot is of daily fluxes (mmol/m<sup>3</sup>/day) of the time rate of change of oxygen (dcdtd), the ecosystem respiration (erd), the gas exchange (gasexd), and the gross primary productivity (gppd) versus time. Neither of these plots will be automatically output to the working drive and will need to be saved by the user.
+The second figure is a plot of daily fluxes (mmol/m<sup>3</sup>/day) of the time rate of change of oxygen (dcdtd), the ecosystem respiration (erd), the gas exchange (gasexd), and the gross primary productivity (gppd) versus time. Neither of these plots will be automatically output to the working drive and will need to be saved by the user.
 
 ![Fluxes](base_run_fluxes.jpeg)
