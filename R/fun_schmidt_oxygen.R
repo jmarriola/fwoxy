@@ -5,6 +5,12 @@
 # THIS FUNCTION IS USED TO CALCULATE THE SCHMIDT NUMBER FOR THE AIR-SEA GAS
 # TRANSFER VELOCITY COMPONENT OF fwoxy.R
 #
+#' @param temp
+#' @param salt
+#'
+#' @return sc (unitless)
+#' @export
+#'
 fun_schmidt_oxygen <- function(temp, salt){
 
   salt0 <- 0 #S=0

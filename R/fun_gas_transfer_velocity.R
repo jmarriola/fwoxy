@@ -14,7 +14,13 @@
 # **Inputs come from fwoxy.R as vectors**
 #
 # OUTPUT IS kw (m/s)
-#
+#'
+#' @param sc
+#' @param wspd2
+#'
+#' @return kw (m/s)
+#' @export
+#'
 fun_gas_transfer_velocity <- function(sc, wspd2){
 
   a <- 0.251 # DO NOT CHANGE

@@ -17,7 +17,13 @@
 # oxysat = oxygen saturation (mmol/m^3)
 #
 # USES: fun_density(temp, salt)
-#
+#'
+#' @param temp
+#' @param salt
+#'
+#' @return oxysat (mmol/m^3)
+#' @export
+#'
 fun_eqb_oxygen <- function(temp, salt){
 
 # Coefficients - DO NOT CHANGE

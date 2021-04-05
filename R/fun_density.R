@@ -16,7 +16,14 @@
 # P = Pressure above atmospheric (dbar)
 #
 # OUTPUT IS RHO = Density (kg/m^3)
-
+#'
+#' @param temp
+#' @param salt
+#' @param P
+#'
+#' @return RHO (kg/m^3)
+#' @export
+#'
 fun_density <- function(temp,salt,P){
 
 # Define some new variables

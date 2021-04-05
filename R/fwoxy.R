@@ -13,6 +13,21 @@
 # INPUT: run name, time variables, initial conditions, forcing, parameters
 
 # OUTPUT: oxygen concentration, TROC, GPP, ER, GASEX
+#'
+#' @param run_name
+#' @param a_param
+#' @param er_param
+#' @param ht_const
+#' @param salt_const
+#' @param temp_const
+#' @param wspd_const
+#'
+#' @import ggplot2
+#' @import tidyr
+#'
+#' @return 2 plots and a .csv file
+#' @export
+#'
 fwoxy <- function(run_name, a_param, er_param, ht_const, salt_const, temp_const, wspd_const)
 {
 

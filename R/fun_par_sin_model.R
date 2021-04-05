@@ -10,6 +10,11 @@
 # INPUT: time (seconds) starting at midnight on day 1
 # OUTPUT: par (W/m^2)
 #
+#' @param t
+#'
+#' @return PAR (W/m^2)
+#' @export
+#'
 fun_par_sin_model <- function(t){
 
   sph <- 60 * 60 # seconds per hour
