@@ -28,7 +28,8 @@
 #' @return 2 plots and a .csv file
 #' @export
 #'
-fwoxy <- function(run_name, a_param, er_param, ht_const, salt_const, temp_const, wspd_const)
+fwoxy <- function(run_name, a_param = 0.2, er_param = 20, ht_const = 3,
+                  salt_const = 25, temp_const = 25, wspd_const = 3)
 {
 
 # Setting Parameters ------------------------------------------------------
@@ -61,7 +62,7 @@ nt <- length(t)         # number of time steps
 
 ht <- matrix(1, ncol = nt, nrow = 1) * ht_const
 wspd <- matrix(1, ncol = nt, nrow = 1) * wspd_const
-temp <- matrix(1, ncol = nt, nrow = 1) * temp_cons
+temp <- matrix(1, ncol = nt, nrow = 1) * temp_const
 salt <- matrix(1, ncol = nt, nrow = 1) * salt_const
 
 # Allocate output vectors to match the number of time steps
