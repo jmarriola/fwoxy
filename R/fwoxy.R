@@ -48,14 +48,6 @@ spm <- 60               # seconds per minute
 sph <- 60 * 60          # seconds per hour
 spd <- 60 * 60 * 24     # seconds per day
 
-# Working source code paths
-source("fun_schmidt_oxygen.R")
-source("fun_density.R")
-source("fun_eqb_oxygen.R")
-source("fun_gas_transfer_velocity.R")
-source("fun_par_sin_model.R")
-
-
 # Model Code --------------------------------------------------------------
 
 # Set up time
