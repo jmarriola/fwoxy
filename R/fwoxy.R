@@ -14,7 +14,7 @@
 
 # OUTPUT: oxygen concentration, TROC, GPP, ER, GASEX
 #'
-#' @param run_name
+#'
 #' @param a_param
 #' @param er_param
 #' @param ht_const
@@ -28,7 +28,7 @@
 #' @return 2 plots and a .csv file
 #' @export
 #'
-fwoxy <- function(run_name, a_param = 0.2, er_param = 20, ht_const = 3,
+fwoxy <- function(a_param = 0.2, er_param = 20, ht_const = 3,
                   salt_const = 25, temp_const = 25, wspd_const = 3)
 {
 

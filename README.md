@@ -93,9 +93,8 @@ Recommendations for the ranges of the input parameters and forcings and their de
 Once the inputs of **run\_name**, parameters, and the forcings are set, you can now run the model. To include the argument values you preset above, you must call them in the function as shown here:
 
 ``` r
-fwoxy(run_name, a_param = a_param, er_param = er_param,
-        ht_const = ht_const, salt_const = salt_const, temp_const = temp_const,
-        wspd_const = wspd_const)
+fwoxy(a_param = a_param, er_param = er_param, ht_const = ht_const, 
+      salt_const = salt_const, temp_const = temp_const, wspd_const = wspd_const)
 ```
 
 Outputs

@@ -4,7 +4,6 @@
 \description{Based on the Odum (1956) open water method, this forward model predicts a future oxygen time series based on initial conditions, such as the concentration of oxygen, ecosystem respiration, windspeed, light efficiency, temperature, salinity, and height of the well-mixed water column. The model outputs a 6 day time series of oxygen concentration, time rate of change of oxygen, ecosystem respiration, and PAR.}
 \usage{
 fwoxy(
-run_name,
 a_param = 0.2,
 er_param = 20,
 ht_const = 3,
@@ -14,7 +13,6 @@ wspd_const = 3)
 }
 
 \arguments{
-  \item{run_name}{Input name to keep track of which run of the model was performed, must be in ''}
   \item{a_param}{Light efficiency ((mmol/m^3)/day)/(W/m^2))}
   \item{er_param}{Ecosystem respiration (mmol/m^3/day)}
   \item{ht_const}{Depth of the well-mixed water column (m)}
@@ -57,7 +55,7 @@ salt_const <- 25
 temp_const <- 25
 wspd_const <- 3
 
-fwoxy(run_name = run_name, a_param = a_param, er_param = er_param,
+fwoxy(a_param = a_param, er_param = er_param,
 ht_const = ht_const, salt_const = salt_const, temp_const = temp_const,
 wspd_const = wspd_const)
 }}
