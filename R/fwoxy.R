@@ -28,8 +28,8 @@
 #' @return 2 plots and a .csv file
 #' @export
 #'
-fwoxy <- function(a_param = 0.2, er_param = 20, ht_const = 3,
-                  salt_const = 25, temp_const = 25, wspd_const = 3)
+fwoxy <- function(a_param = a_param, er_param = er_param, ht_const = ht_const,
+                  salt_const = salt_const, temp_const = temp_const, wspd_const = wspd_const)
 {
 
 # Setting Parameters ------------------------------------------------------
