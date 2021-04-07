@@ -9,7 +9,7 @@ fwoxy.R
 Description
 -----------
 
-This R package, **fwoxy**, is a simple forward model of an idealized estuarine dissolved oxygen time series and the resulting net ecosystem metabolism, i.e. gross primary productivity, ecosystem respiration, and air-sea gas exchange. The forward model is based on the Odum (1956) open water method, which determines net ecosystem metabolism of an estuary using a measured dissolved oxygen time series of a well-mixed water column. The primary use of this model is as a lab component for a marine biogeochemistry course to further understanding of biogeochemical and physical processes that influence the health of an estuary.
+This R package, **fwoxy**, is a simple forward oxygen mass balance model that predicts the oxygen concentration of a well-mixed water column given the initial conditions and forcings. The primary use of this model is as a lab component for a marine biogeochemistry course to further understanding of biogeochemical and physical processes that influence ecosystem metabolism.
 
 The development version of this package can be installed from Github:
 
@@ -44,9 +44,9 @@ Running fwoxy
 Before identifying parameters for the model, load associated libraries needed for fwoxy.R to run:
 
 ``` r
+library(fwoxy)
 library(ggplot2)
 library(tidyr)
-library(fwoxy)
 ```
 
 ### Inputs: Parameters and forcings of the model
@@ -58,7 +58,7 @@ Choose and set the name of the model run as **run\_name** so that the output .cs
 run_name <- 'example'
 ```
 
-Next, set the parameters of the light efficiency (**a\_param**) and ecosystem respiration (**er\_param**). Default settings for **a\_param** and **er\_param** are 0.2 ((mmol/m<sup>3</sup>)/day)/(W/m<sup>2</sup>)) and 20 (mmol/m<sup>3</sup>/day), respectively.
+Next, set the parameters of the light efficiency (**a\_param**) and ecosystem respiration (**er\_param**). Equilibrium values for **a\_param** and **er\_param** are 0.2 ((mmol/m<sup>3</sup>)/day)/(W/m<sup>2</sup>)) and 20 (mmol/m<sup>3</sup>/day), respectively.
 
 ``` r
 # Set model parameters
@@ -66,28 +66,28 @@ a_param <- 0.2          # ((mmol/m^3)/day)/(W/m^2), light efficiency
 er_param <- 20          # (mmol/m^3/day), ecosystem respiration
 ```
 
-Finally, set the forcings of the model. The forcings are depth of the well-mixed water column (**ht\_const**), salinity (**salt\_const**), water temperature (**temp\_const**), and windspeed at 10 m height (**wspd\_const**). Default settings for **ht\_const**, **salt\_const**, **temp\_const**, and **wspd\_const** are 3 (m), 25 (ppt), 25 (deg C), and 3 (m/s), respectively.
+Finally, set the forcings of the model. The forcings are depth of the well-mixed water column (**ht\_const**), salinity (**salt\_const**), water temperature (**temp\_const**), and windspeed at 10 m height (**wspd\_const**). Equilibrium values for **ht\_const**, **salt\_const**, **temp\_const**, and **wspd\_const** are 3 (m), 25 (ppt), 25 (deg C), and 3 (m/s), respectively.
 
 ``` r
 # Forcings
 ht_const <- 3           # m, height of the water column
-wspd_const <- 3         # m/s, wind speed at 10 m
-temp_const <- 25        # deg C, water temperature
 salt_const <- 25        # ppt, salinity
+temp_const <- 25        # deg C, water temperature
+wspd_const <- 3         # m/s, wind speed at 10 m
 ```
 
 Although atmospheric pressure is used to calculate seawater density, in this forward model the atmospheric pressure is not defined by the user and is pre-set to 0 in the functions.
 
 Recommendations for the ranges of the input parameters and forcings and their default values (listed below) are based on the minimum and 95th percentile values from data collected at the Cat Point Apalachicola Bay, Florida, NERR station from the year 2012.
 
-|    Input    | Min | Max | Default |
-|:-----------:|:---:|:---:|:-------:|
-|   a\_param  | 0.1 | 1.0 |   0.2   |
-|  er\_param  |  0  |  80 |    20   |
-|  ht\_const  | 0.5 | 5.0 |   3.0   |
-| salt\_const |  5  |  35 |    25   |
-| temp\_const |  15 |  30 |    25   |
-| wspd\_const |  0  |  6  |    3    |
+|    Input    | Min | Max | Equilibrium |
+|:-----------:|:---:|:---:|:-----------:|
+|   a\_param  | 0.1 | 1.0 |     0.2     |
+|  er\_param  |  0  |  80 |      20     |
+|  ht\_const  | 0.5 | 5.0 |     3.0     |
+| salt\_const |  5  |  35 |      25     |
+| temp\_const |  15 |  30 |      25     |
+| wspd\_const |  0  |  6  |      3      |
 
 ### Running the forward model
 
