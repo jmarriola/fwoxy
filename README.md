@@ -46,6 +46,7 @@ Before identifying parameters for the model, load associated libraries needed fo
 ``` r
 library(ggplot2)
 library(tidyr)
+library(fwoxy)
 ```
 
 ### Inputs: Parameters and forcings of the model
@@ -71,7 +72,7 @@ Finally, set the forcings of the model. The forcings are depth of the well-mixed
 # Forcings
 ht_const <- 3           # m, height of the water column
 wspd_const <- 3         # m/s, wind speed at 10 m
-temp_cons <- 25         # deg C, water temperature
+temp_const <- 25        # deg C, water temperature
 salt_const <- 25        # ppt, salinity
 ```
 
