@@ -9,9 +9,8 @@ er_param = er_param,
 ht_const = ht_const,
 salt_const = salt_const,
 temp_const = temp_const,
-wspd_const = wspd_const,
-plot_oxy = TRUE,
-plot_flux = TRUE)
+wspd_const = wspd_const
+)
 }
 
 \arguments{
@@ -21,8 +20,7 @@ plot_flux = TRUE)
   \item{salt_const}{Salinity of the seawater (ppt)}
   \item{temp_const}{Water temperature (degrees C)}
   \item{wspd_const}{Wind speed at 10m height (m/s)}
-  \item{plot_oxy}{Plot of oxygen concentrations (mmol/m^3^) versus time}
-  \item{plot_flux}{Plot of fluxes (mmol/m^2^/day) versus time}
+
 }
 \value{
   \item{c}{oxygen concentration (mmol/m^3^)}
@@ -61,5 +59,5 @@ wspd_const <- 3
 
 fwoxy(a_param = a_param, er_param = er_param,
 ht_const = ht_const, salt_const = salt_const, temp_const = temp_const,
-wspd_const = wspd_const, plot_oxy = TRUE, plot_flux = TRUE)
+wspd_const = wspd_const)
 }}
