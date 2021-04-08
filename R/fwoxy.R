@@ -146,28 +146,29 @@ varb <- c('time step', 'oxy, mmol/m3', 'troc, mmol/m3/d', 'gasex, mmol/m3/d', 'g
           'er, mmol/m3/d','oxysu, mmol/m3', 'wspd2, m2/s2', 'sc', 'kw, m/s')
 results <- data.frame(t, c, dcdtd, gasexd, gppd, erd, oxysu, wspd2, sc, kw)
 colnames(results) <- varb
-write.csv(results, paste0(run_name, '.csv'))
+write <- write.csv(results, paste0(run_name, '.csv'))
 
 ## Plots
 
 # Plot of oxygen concentration time series
-print(ggplot(results, aes(x = t, y = c)) +
+oxyPlot <- ggplot(results, aes(x = t, y = c)) +
   geom_line(colour = "blue") +
   labs(x = "Hour of day", y = "oxy, mmol/m3") +
   theme_bw() +
   scale_x_continuous(breaks = seq(1,518400,by=43200), labels = c('1'='0','43201'='12','86401'='0','129601'='12','172801'='0','216001'='12','259201'='0','302401'='12','345601'='0','388801'='12','432001'='0','475201'='12'))
-)
+
 
 # A way to plot fluxes, includes legend outside on right
 colors <- c(gasexd = "red3", gppd = "orange", erd = "purple4", dcdtd = "steelblue3")
 fluxes <- data.frame(t, gasexd, gppd, erd, dcdtd)
 resultsNew <- fluxes %>% pivot_longer(cols = gasexd:dcdtd, names_to = 'Variables', values_to = "Value")
-ggplot(resultsNew, aes(x = t, y = Value, group = Variables, color = Variables)) +
+fluxPlot <- ggplot(resultsNew, aes(x = t, y = Value, group = Variables, color = Variables)) +
   theme_bw() +
   geom_line() +
   labs(x = "Hour of day", y = "Flux, mmol/m3/day") +
   scale_color_manual(values = colors) +
   scale_x_continuous(breaks = seq(1,518400,by=43200), labels = c('1'='0','43201'='12','86401'='0','129601'='12','172801'='0','216001'='12','259201'='0','302401'='12','345601'='0','388801'='12','432001'='0','475201'='12'))
+
 }
 
 
