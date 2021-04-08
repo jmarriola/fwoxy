@@ -163,13 +163,13 @@ print(ggplot(results, aes(x = t, y = c)) +
 colors <- c(gasexd = "red3", gppd = "orange", erd = "purple4", dcdtd = "steelblue3")
 fluxes <- data.frame(t, gasexd, gppd, erd, dcdtd)
 resultsNew <- fluxes %>% pivot_longer(cols = gasexd:dcdtd, names_to = 'Variables', values_to = "Value")
-ggplot(resultsNew, aes(x = t, y = Value, group = Variables, color = Variables)) +
+print(ggplot(resultsNew, aes(x = t, y = Value, group = Variables, color = Variables)) +
   theme_bw() +
   geom_line() +
   labs(x = "Hour of day", y = "Flux, mmol/m3/day") +
   scale_color_manual(values = colors) +
   scale_x_continuous(breaks = seq(1,518400,by=43200), labels = c('1'='0','43201'='12','86401'='0','129601'='12','172801'='0','216001'='12','259201'='0','302401'='12','345601'='0','388801'='12','432001'='0','475201'='12'))
-
+)
 }
 
 
