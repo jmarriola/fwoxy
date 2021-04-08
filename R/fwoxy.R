@@ -29,7 +29,8 @@
 #' @export
 #'
 fwoxy <- function(a_param = a_param, er_param = er_param, ht_const = ht_const,
-                  salt_const = salt_const, temp_const = temp_const, wspd_const = wspd_const)
+                  salt_const = salt_const, temp_const = temp_const, wspd_const = wspd_const,
+                  plot_oxy = TRUE, plot_flux = TRUE)
 {
 
 # Setting Parameters ------------------------------------------------------
@@ -146,7 +147,7 @@ varb <- c('time step', 'oxy, mmol/m3', 'troc, mmol/m3/d', 'gasex, mmol/m3/d', 'g
           'er, mmol/m3/d','oxysu, mmol/m3', 'wspd2, m2/s2', 'sc', 'kw, m/s')
 results <- data.frame(t, c, dcdtd, gasexd, gppd, erd, oxysu, wspd2, sc, kw)
 colnames(results) <- varb
-write <- write.csv(results, paste0(run_name, '.csv'))
+write.csv(results, paste0(run_name, '.csv'))
 
 ## Plots
 
@@ -157,6 +158,7 @@ oxyPlot <- ggplot(results, aes(x = t, y = c)) +
   theme_bw() +
   scale_x_continuous(breaks = seq(1,518400,by=43200), labels = c('1'='0','43201'='12','86401'='0','129601'='12','172801'='0','216001'='12','259201'='0','302401'='12','345601'='0','388801'='12','432001'='0','475201'='12'))
 
+if(plot_oxy) return(oxyPlot)
 
 # A way to plot fluxes, includes legend outside on right
 colors <- c(gasexd = "red3", gppd = "orange", erd = "purple4", dcdtd = "steelblue3")
@@ -169,6 +171,7 @@ fluxPlot <- ggplot(resultsNew, aes(x = t, y = Value, group = Variables, color = 
   scale_color_manual(values = colors) +
   scale_x_continuous(breaks = seq(1,518400,by=43200), labels = c('1'='0','43201'='12','86401'='0','129601'='12','172801'='0','216001'='12','259201'='0','302401'='12','345601'='0','388801'='12','432001'='0','475201'='12'))
 
+if(plot_flux) return(fluxPlot)
 }
 
 

@@ -4,12 +4,14 @@
 \description{Based on the Odum (1956) open water method, this forward model predicts a future oxygen time series based on initial conditions, such as the concentration of oxygen, ecosystem respiration, windspeed, light efficiency, temperature, salinity, and height of the well-mixed water column. The model outputs a 6 day time series of oxygen concentration, time rate of change of oxygen, ecosystem respiration, and PAR.}
 \usage{
 fwoxy(
-a_param = 0.2,
-er_param = 20,
-ht_const = 3,
-salt_const = 25,
-temp_const = 25,
-wspd_const = 3)
+a_param = a_param,
+er_param = er_param,
+ht_const = ht_const,
+salt_const = salt_const,
+temp_const = temp_const,
+wspd_const = wspd_const,
+plot_oxy = TRUE,
+plot_flux = TRUE)
 }
 
 \arguments{
@@ -19,6 +21,8 @@ wspd_const = 3)
   \item{salt_const}{Salinity of the seawater (ppt)}
   \item{temp_const}{Water temperature (degrees C)}
   \item{wspd_const}{Wind speed at 10m height (m/s)}
+  \item{plot_oxy}{Plot of oxygen concentrations (mmol/m^3^) versus time}
+  \item{plot_flux}{Plot of fluxes (mmol/m^2^/day) versus time}
 }
 \value{
   \item{c}{oxygen concentration (mmol/m^3^)}
@@ -57,5 +61,5 @@ wspd_const <- 3
 
 fwoxy(a_param = a_param, er_param = er_param,
 ht_const = ht_const, salt_const = salt_const, temp_const = temp_const,
-wspd_const = wspd_const)
+wspd_const = wspd_const, plot_oxy = TRUE, plot_flux = TRUE)
 }}
