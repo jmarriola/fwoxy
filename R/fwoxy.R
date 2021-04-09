@@ -162,7 +162,7 @@ colors <- c(gasexd = "red3", gppd = "orange", erd = "purple4", dcdtd = "steelblu
 fluxes <- data.frame(t, gasexd, gppd, erd, dcdtd)
 resultsNew <- fluxes %>% pivot_longer(cols = gasexd:dcdtd, names_to = 'Variables', values_to = "Value")
 
-par(mfrow = c(2,1))
+#par(mfrow = c(2,1))
 ggplot(results, aes(x = t, y = c)) +
   geom_line(colour = "blue") +
   labs(x = "Hour of day", y = "oxy, mmol/m3") +
