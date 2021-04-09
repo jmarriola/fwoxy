@@ -22,6 +22,9 @@ After installation of the fwoxy.R package, install packages **ggplot2** and **ti
 ``` r
 install.packages('ggplot2')
 install.packages('tidyr')
+install.packages('grid')
+install.packages('gridExtra')
+install.packages('lattice')
 ```
 
 ### Functions
@@ -44,6 +47,9 @@ Before identifying parameters for the model, load associated libraries needed fo
 library(fwoxy)
 library(ggplot2)
 library(tidyr)
+library(gridExtra)
+library(grid)
+library(lattice)
 ```
 
 ### Inputs: Parameters and forcings of the model
