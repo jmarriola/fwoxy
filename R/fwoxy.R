@@ -163,7 +163,7 @@ fluxes <- data.frame(t, gasexd, gppd, erd, dcdtd)
 resultsNew <- fluxes %>% pivot_longer(cols = gasexd:dcdtd, names_to = 'Variables', values_to = "Value")
 
 
-par(mfrow = c(2,1))
+output <- par(mfrow = c(2,1))
 
 ggplot(results, aes(x = t, y = c)) +
   geom_line(colour = "blue") +
@@ -178,6 +178,8 @@ ggplot(resultsNew, aes(x = t, y = Value, group = Variables, color = Variables)) 
   labs(x = "Hour of day", y = "Flux, mmol/m3/day") +
   scale_color_manual(values = colors) +
   scale_x_continuous(breaks = breaks, labels = labels)
+
+print(output)
 
 
 # Return results data frame to the global environment
