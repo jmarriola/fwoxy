@@ -163,23 +163,22 @@ fluxes <- data.frame(t, gasexd, gppd, erd, dcdtd)
 resultsNew <- fluxes %>% pivot_longer(cols = gasexd:dcdtd, names_to = 'Variables', values_to = "Value")
 
 
-output <- par(mfrow = c(2,1))
-
-ggplot(results, aes(x = t, y = c)) +
+oxyPlot <- ggplot(results, aes(x = t, y = c)) +
   geom_line(colour = "blue") +
   labs(x = "Hour of day", y = "oxy, mmol/m3") +
   theme_bw() +
   scale_x_continuous(breaks = breaks, labels = labels)
 
+print(oxyPlot)
 
-ggplot(resultsNew, aes(x = t, y = Value, group = Variables, color = Variables)) +
+fluxPlot <- ggplot(resultsNew, aes(x = t, y = Value, group = Variables, color = Variables)) +
   theme_bw() +
   geom_line() +
   labs(x = "Hour of day", y = "Flux, mmol/m3/day") +
   scale_color_manual(values = colors) +
   scale_x_continuous(breaks = breaks, labels = labels)
 
-print(output)
+print(fluxPlot)
 
 
 # Return results data frame to the global environment
