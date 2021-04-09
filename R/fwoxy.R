@@ -162,14 +162,14 @@ colors <- c(gasexd = "red3", gppd = "orange", erd = "purple4", dcdtd = "steelblu
 fluxes <- data.frame(t, gasexd, gppd, erd, dcdtd)
 resultsNew <- fluxes %>% pivot_longer(cols = gasexd:dcdtd, names_to = 'Variables', values_to = "Value")
 
-par(mfrow = c(2,1))
+require(gridExtra)
 oxyPlot <- ggplot(results, aes(x = t, y = c)) +
   geom_line(colour = "blue") +
   labs(x = "Hour of day", y = "oxy, mmol/m3") +
   theme_bw() +
   scale_x_continuous(breaks = breaks, labels = labels)
 
-print(oxyPlot)
+#print(oxyPlot)
 
 fluxPlot <- ggplot(resultsNew, aes(x = t, y = Value, group = Variables, color = Variables)) +
   theme_bw() +
@@ -178,7 +178,8 @@ fluxPlot <- ggplot(resultsNew, aes(x = t, y = Value, group = Variables, color = 
   scale_color_manual(values = colors) +
   scale_x_continuous(breaks = breaks, labels = labels)
 
-print(fluxPlot)
+grid.arrange(oxyPlot, fluxPlot, ncol = 1)
+#print(fluxPlot)
 
 
 # Return results data frame to the global environment
