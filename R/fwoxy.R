@@ -17,19 +17,19 @@
 #'
 #' @param a_param
 #' @param er_param
-#' @param ht_const
-#' @param salt_const
-#' @param temp_const
-#' @param wspd_const
+#' @param ht_in
+#' @param salt_in
+#' @param temp_in
+#' @param wspd_in
 #'
 #' @import ggplot2
 #' @import tidyr
 #'
-#' @return 2 plots and a .csv file
+#' @return 2 plots and a data frame
 #' @export
 #'
-fwoxy <- function(a_param = a_param, er_param = er_param, ht_const = ht_const,
-                  salt_const = salt_const, temp_const = temp_const, wspd_const = wspd_const)
+fwoxy <- function(a_param = a_param, er_param = er_param, ht_in = ht_const,
+                  salt_in = salt_const, temp_in = temp_const, wspd_in = wspd_const)
 {
 
 # Setting Parameters ------------------------------------------------------
@@ -60,10 +60,13 @@ nt <- length(t)         # number of time steps
 
 # Set up forcing vectors to match the number of time steps
 
-ht <- matrix(1, ncol = nt, nrow = 1) * ht_const
-wspd <- matrix(1, ncol = nt, nrow = 1) * wspd_const
-temp <- matrix(1, ncol = nt, nrow = 1) * temp_const
-salt <- matrix(1, ncol = nt, nrow = 1) * salt_const
+# Currently set to run with variable constants, need to add if else statements
+# to use with vectors
+
+ht <- matrix(1, ncol = nt, nrow = 1) * ht_in
+wspd <- matrix(1, ncol = nt, nrow = 1) * wspd_in
+temp <- matrix(1, ncol = nt, nrow = 1) * temp_in
+salt <- matrix(1, ncol = nt, nrow = 1) * salt_in
 
 # Allocate output vectors to match the number of time steps
 
@@ -175,7 +178,7 @@ fluxPlot <- ggplot(resultsNew, aes(x = t, y = Value, group = Variables, color = 
   scale_x_continuous(breaks = breaks, labels = labels)
 
 print(fluxPlot)
-  
+
 return(results)
 }
 

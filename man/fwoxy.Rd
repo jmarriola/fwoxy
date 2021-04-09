@@ -6,20 +6,20 @@
 fwoxy(
 a_param = a_param,
 er_param = er_param,
-ht_const = ht_const,
-salt_const = salt_const,
-temp_const = temp_const,
-wspd_const = wspd_const
+ht_in= ht_const,
+salt_in = salt_const,
+temp_in = temp_const,
+wspd_in = wspd_const
 )
 }
 
 \arguments{
   \item{a_param}{Light efficiency ((mmol/m^3)/day)/(W/m^2))}
   \item{er_param}{Ecosystem respiration (mmol/m^3/day)}
-  \item{ht_const}{Depth of the well-mixed water column (m)}
-  \item{salt_const}{Salinity of the seawater (ppt)}
-  \item{temp_const}{Water temperature (degrees C)}
-  \item{wspd_const}{Wind speed at 10m height (m/s)}
+  \item{ht_in}{Depth of the well-mixed water column (m)}
+  \item{salt_in}{Salinity of the seawater (ppt)}
+  \item{temp_in}{Water temperature (degrees C)}
+  \item{wspd_in}{Wind speed at 10m height (m/s)}
 
 }
 \value{
@@ -58,6 +58,6 @@ temp_const <- 25
 wspd_const <- 3
 
 fwoxy(a_param = a_param, er_param = er_param,
-ht_const = ht_const, salt_const = salt_const, temp_const = temp_const,
-wspd_const = wspd_const)
+ht_in = ht_const, salt_in = salt_const, temp_in = temp_const,
+wspd_in = wspd_const)
 }}
