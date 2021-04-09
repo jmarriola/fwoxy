@@ -46,13 +46,7 @@ library(tidyr)
 ```
 
 ###Inputs: Parameters and forcings of the model
-Choose and set the name of the model run as **run_name** so that the output .csv file will be recognizable (e.g. 'run01' or 'fwoxy_01'). The .csv extension is added later in the function.    
-```{r, eval = F}
-# Model run name
-run_name <- 'example'
-```
-
-Next, set the parameters of the light efficiency (**a_param**) and ecosystem respiration (**er_param**). Equilibrium values for **a_param** and **er_param** are 0.2 ((mmol/m^3^)/day)/(W/m^2^)) and 20 (mmol/m^3^/day), respectively.  
+Set the parameters of the light efficiency (**a_param**) and ecosystem respiration (**er_param**). Equilibrium values for **a_param** and **er_param** are 0.2 ((mmol/m^3^)/day)/(W/m^2^)) and 20 (mmol/m^3^/day), respectively.  
 ```{r, eval = F}
 # Set model parameters
 a_param <- 0.2          # ((mmol/m^3)/day)/(W/m^2), light efficiency
@@ -83,14 +77,18 @@ Recommendations for the ranges of the input parameters and forcings and their de
 |wspd_const|0|6|3|
 
 ###Running the forward model
-Once the inputs of **run_name**, parameters, and the forcings are set, you can now run the model. To include the argument values you preset above, you must call them in the function as shown here:
+Once the inputs of the parameters and the forcings are set, you can now run the model. Before running the model select a unique name so that you can easily identify the results of this specific run. This object will store the results of the model outputs (here, example is used as the object). To include the argument values you preset above for parameters and forcings, you must call them in the function as shown here:
 ```{r, eval = F}
-fwoxy(a_param = a_param, er_param = er_param, ht_const = ht_const, 
+example <- fwoxy(a_param = a_param, er_param = er_param, ht_const = ht_const, 
       salt_const = salt_const, temp_const = temp_const, wspd_const = wspd_const)
 ```
 
 ##Outputs
-The forward model will output a .csv file to the working drive with the **run_name** input you set as the file name. In addition to the .csv file, the function will create two plots in the Plots view in RStudio (see examples below). The first figure is the forward oxygen concentration time series versus time. This plot illustrates how the dissolved oxygen concentration (mmol/m^3^) in the water column will change due to the parameters and forcings of the model.   
+The forward model will output a data frame to the R environment that can be saved as a .csv file in the working directory using the following code: 
+```{r, eval = F}
+write.csv(example, "example.csv")
+```
+In addition to the data frame, the fwoxy function will create two plots in the Plots view in RStudio (see examples below). The first figure is the forward oxygen concentration time series versus time. This plot illustrates how the dissolved oxygen concentration (mmol/m^3^) in the water column will change due to the parameters and forcings of the model.   
 
 ![Oxygen concentration](base_run_oxy.jpeg)  
   
