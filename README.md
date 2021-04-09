@@ -1,13 +1,11 @@
 
-fwoxy.R
-=======
+# fwoxy.R
 
 #### Jill M. Arriola and Maria Herrmann
 
 ##### Email: <jva5648@psu.edu>
 
-Description
------------
+## Description
 
 This R package, **fwoxy**, is a simple forward oxygen mass balance model that predicts the oxygen concentration of a well-mixed water column given the initial conditions and forcings. The primary use of this model is as a lab component for a marine biogeochemistry course to further understanding of biogeochemical and physical processes that influence ecosystem metabolism.
 
@@ -38,8 +36,7 @@ There are six functions included in this package:
 
 **Note:** Functions 1 - 5 are sourced by the fwoxy.R function and do not need to be called separately. These functions should not be modified on their own.
 
-Running fwoxy
--------------
+## Running fwoxy
 
 Before identifying parameters for the model, load associated libraries needed for fwoxy.R to run:
 
@@ -51,14 +48,7 @@ library(tidyr)
 
 ### Inputs: Parameters and forcings of the model
 
-Choose and set the name of the model run as **run\_name** so that the output .csv file will be recognizable (e.g. 'run01' or 'fwoxy\_01'). The .csv extension is added later in the function.
-
-``` r
-# Model run name
-run_name <- 'example'
-```
-
-Next, set the parameters of the light efficiency (**a\_param**) and ecosystem respiration (**er\_param**). Equilibrium values for **a\_param** and **er\_param** are 0.2 ((mmol/m<sup>3</sup>)/day)/(W/m<sup>2</sup>)) and 20 (mmol/m<sup>3</sup>/day), respectively.
+Set the parameters of the light efficiency (**a\_param**) and ecosystem respiration (**er\_param**). Equilibrium values for **a\_param** and **er\_param** are 0.2 ((mmol/m<sup>3</sup>)/day)/(W/m<sup>2</sup>)) and 20 (mmol/m<sup>3</sup>/day), respectively.
 
 ``` r
 # Set model parameters
@@ -66,10 +56,10 @@ a_param <- 0.2          # ((mmol/m^3)/day)/(W/m^2), light efficiency
 er_param <- 20          # (mmol/m^3/day), ecosystem respiration
 ```
 
-Finally, set the forcings of the model. The forcings are depth of the well-mixed water column (**ht\_const**), salinity (**salt\_const**), water temperature (**temp\_const**), and windspeed at 10 m height (**wspd\_const**). Equilibrium values for **ht\_const**, **salt\_const**, **temp\_const**, and **wspd\_const** are 3 (m), 25 (ppt), 25 (deg C), and 3 (m/s), respectively.
+Finally, set the forcings of the model. Currently, the model only accepts a constant value for each of the forcings. The forcings are depth of the well-mixed water column (**ht\_const**), salinity (**salt\_const**), water temperature (**temp\_const**), and windspeed at 10 m height (**wspd\_const**). Equilibrium values for **ht\_const**, **salt\_const**, **temp\_const**, and **wspd\_const** are 3 (m), 25 (ppt), 25 (deg C), and 3 (m/s), respectively.
 
 ``` r
-# Forcings
+# Constant Forcings
 ht_const <- 3           # m, height of the water column
 salt_const <- 25        # ppt, salinity
 temp_const <- 25        # deg C, water temperature
@@ -78,7 +68,7 @@ wspd_const <- 3         # m/s, wind speed at 10 m
 
 Although atmospheric pressure is used to calculate seawater density, in this forward model the atmospheric pressure is not defined by the user and is pre-set to 0 in the functions.
 
-Recommendations for the ranges of the input parameters and forcings and their default values (listed below) are based on the minimum and 95th percentile values from data collected at the Cat Point Apalachicola Bay, Florida, NERR station from the year 2012.
+Recommendations for the ranges of the input parameters and forcings and their equilibrium values (listed below) are based on the minimum and 95th percentile values from data collected at the Cat Point Apalachicola Bay, Florida, NERR station from the year 2012.
 
 |    Input    | Min | Max | Equilibrium |
 |:-----------:|:---:|:---:|:-----------:|
@@ -91,17 +81,22 @@ Recommendations for the ranges of the input parameters and forcings and their de
 
 ### Running the forward model
 
-Once the inputs of **run\_name**, parameters, and the forcings are set, you can now run the model. To include the argument values you preset above, you must call them in the function as shown here:
+Once the inputs of the parameters and the forcings are set, you can now run the model. Before running the model select a unique name so that you can easily identify the results of this specific run. This object will store the results of the model outputs (here, example is used as the object). To include the argument values set for the constant parameters and forcings, you must call them in the function as shown here:
 
 ``` r
-fwoxy(a_param = a_param, er_param = er_param, ht_const = ht_const, 
-      salt_const = salt_const, temp_const = temp_const, wspd_const = wspd_const)
+example <- fwoxy(a_param = a_param, er_param = er_param, ht_in = ht_const, 
+      salt_in = salt_const, temp_in = temp_const, wspd_in = wspd_const)
 ```
 
-Outputs
--------
+## Outputs
 
-The forward model will output a .csv file to the working drive with the **run\_name** input you set as the file name. In addition to the .csv file, the function will create two plots in the Plots view in RStudio (see below). The first figure is the forward oxygen concentration time series versus time. This plot illustrates how the dissolved oxygen concentration (mmol/m<sup>3</sup>) in the water column will change due to the parameters and forcings of the model.
+The forward model will output a data frame to the R environment that can be saved as a .csv file in the working directory using the following code:
+
+``` r
+write.csv(example, "example.csv")
+```
+
+In addition to the data frame, the fwoxy function will create two plots in the Plots view in RStudio (see examples below). The first figure is the forward oxygen concentration time series versus time. This plot illustrates how the dissolved oxygen concentration (mmol/m<sup>3</sup>) in the water column will change due to the parameters and forcings of the model.
 
 ![Oxygen concentration](base_run_oxy.jpeg)
 

@@ -54,9 +54,9 @@ er_param <- 20          # (mmol/m^3/day), ecosystem respiration
 
 ```
 
-Finally, set the forcings of the model. The forcings are depth of the well-mixed water column (**ht_const**), salinity (**salt_const**), water temperature (**temp_const**), and windspeed at 10 m height (**wspd_const**). Equilibrium values for **ht_const**, **salt_const**, **temp_const**, and **wspd_const** are 3 (m), 25 (ppt), 25 (deg C), and 3 (m/s), respectively.
+Finally, set the forcings of the model. Currently, the model only accepts a constant value for each of the forcings. The forcings are depth of the well-mixed water column (**ht_const**), salinity (**salt_const**), water temperature (**temp_const**), and windspeed at 10 m height (**wspd_const**). Equilibrium values for **ht_const**, **salt_const**, **temp_const**, and **wspd_const** are 3 (m), 25 (ppt), 25 (deg C), and 3 (m/s), respectively.
 ```{r, eval = F}
-# Forcings
+# Constant Forcings
 ht_const <- 3           # m, height of the water column
 salt_const <- 25        # ppt, salinity
 temp_const <- 25        # deg C, water temperature
@@ -65,7 +65,7 @@ wspd_const <- 3         # m/s, wind speed at 10 m
 ```
 Although atmospheric pressure is used to calculate seawater density, in this forward model the atmospheric pressure is not defined by the user and is pre-set to 0 in the functions.  
 
-Recommendations for the ranges of the input parameters and forcings and their default values (listed below) are based on the minimum and 95th percentile values from data collected at the Cat Point Apalachicola Bay, Florida, NERR station from the year 2012.  
+Recommendations for the ranges of the input parameters and forcings and their equilibrium values (listed below) are based on the minimum and 95th percentile values from data collected at the Cat Point Apalachicola Bay, Florida, NERR station from the year 2012.  
 
 |Input|Min|Max|Equilibrium|
 |:---:|:---:|:---:|:---:|
@@ -77,10 +77,10 @@ Recommendations for the ranges of the input parameters and forcings and their de
 |wspd_const|0|6|3|
 
 ###Running the forward model
-Once the inputs of the parameters and the forcings are set, you can now run the model. Before running the model select a unique name so that you can easily identify the results of this specific run. This object will store the results of the model outputs (here, example is used as the object). To include the argument values you preset above for parameters and forcings, you must call them in the function as shown here:
+Once the inputs of the parameters and the forcings are set, you can now run the model. Before running the model select a unique name so that you can easily identify the results of this specific run. This object will store the results of the model outputs (here, example is used as the object). To include the argument values set for the constant parameters and forcings, you must call them in the function as shown here:
 ```{r, eval = F}
-example <- fwoxy(a_param = a_param, er_param = er_param, ht_const = ht_const, 
-      salt_const = salt_const, temp_const = temp_const, wspd_const = wspd_const)
+example <- fwoxy(a_param = a_param, er_param = er_param, ht_in = ht_const, 
+      salt_in = salt_const, temp_in = temp_const, wspd_in = wspd_const)
 ```
 
 ##Outputs
