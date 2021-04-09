@@ -90,7 +90,7 @@ fwoxy(a_param = a_param, er_param = er_param, ht_const = ht_const,
 ```
 
 ##Outputs
-The forward model will output a .csv file to the working drive with the **run_name** input you set as the file name. In addition to the .csv file, the function will create two plots in the Plots view in RStudio (see below). The first figure is the forward oxygen concentration time series versus time. This plot illustrates how the dissolved oxygen concentration (mmol/m^3^) in the water column will change due to the parameters and forcings of the model.   
+The forward model will output a .csv file to the working drive with the **run_name** input you set as the file name. In addition to the .csv file, the function will create two plots in the Plots view in RStudio (see examples below). The first figure is the forward oxygen concentration time series versus time. This plot illustrates how the dissolved oxygen concentration (mmol/m^3^) in the water column will change due to the parameters and forcings of the model.   
 
 ![Oxygen concentration](base_run_oxy.jpeg)  
   
