@@ -4,6 +4,7 @@
 \description{Based on the Odum (1956) open water method, this forward model predicts a future oxygen time series based on initial conditions, such as the concentration of oxygen, ecosystem respiration, windspeed, light efficiency, temperature, salinity, and height of the well-mixed water column. The model outputs a 6 day time series of oxygen concentration, time rate of change of oxygen, ecosystem respiration, and PAR.}
 \usage{
 fwoxy(
+oxy_ic = oxy_ic,
 a_param = a_param,
 er_param = er_param,
 ht_in= ht_const,
@@ -14,6 +15,7 @@ wspd_in = wspd_const
 }
 
 \arguments{
+  \item{oxy_ic}{Initial concentration of oxygen (mmol/m^3)}
   \item{a_param}{Light efficiency ((mmol/m^3)/day)/(W/m^2))}
   \item{er_param}{Ecosystem respiration (mmol/m^3/day)}
   \item{ht_in}{Depth of the well-mixed water column (m)}
@@ -23,7 +25,7 @@ wspd_in = wspd_const
 
 }
 \value{
-  \item{c}{oxygen concentration (mmol/m^3^)}
+  \item{c}{oxygen concentration (mmol/m^3)}
   \item{t}{time step (seconds)}
   \item{dcdtd}{time rate of change (mmol/m^3/day)}
   \item{gppd}{gross primary production (mmol/m^3/day)}
@@ -44,8 +46,8 @@ wspd_in = wspd_const
 
 \examples{
 \dontrun{
-# Model run name
-run_name <- 'example'
+# Set initial oxygen concentration
+oxy_ic <- 250
 
 # Set model parameters
 a_param <- 0.2

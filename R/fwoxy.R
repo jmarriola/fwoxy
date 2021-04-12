@@ -10,11 +10,11 @@
 # fun_schmidt_oxygen
 # fun_gas_transfer_velocity
 
-# INPUT: run name, time variables, initial conditions, forcing, parameters
+# INPUT: oxygen concentration, time variables, initial conditions, forcing, parameters
 
 # OUTPUT: oxygen concentration, TROC, GPP, ER, GASEX
 #'
-#'
+#' @param oxy_ic
 #' @param a_param
 #' @param er_param
 #' @param ht_in
@@ -28,7 +28,7 @@
 #' @return 2 plots and a data frame
 #' @export
 #'
-fwoxy <- function(a_param = a_param, er_param = er_param, ht_in = ht_const,
+fwoxy <- function(oxy_ic = oxy_ic, a_param = a_param, er_param = er_param, ht_in = ht_const,
                   salt_in = salt_const, temp_in = temp_const, wspd_in = wspd_const)
 {
 
@@ -42,7 +42,7 @@ ndays <- 6              # number of days to run
 dt_min <- 15            # time step in minutes
 
 # Initial conditions: starting oxygen concentration
-oxy_ic <- 250           # mmol/m3 (1 mmol/m3 = 1 uM)
+# oxy_ic <- 250           # mmol/m3 (1 mmol/m3 = 1 uM)
 
 # Conversion factors, DO NOT CHANGE
 spm <- 60               # seconds per minute
