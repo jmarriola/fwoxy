@@ -54,10 +54,11 @@ library(tidyr)
 
 ### Inputs: Parameters and forcings of the model
 
-Set the parameters of the light efficiency (**a\_param**) and ecosystem respiration (**er\_param**). Equilibrium values for **a\_param** and **er\_param** are 0.2 ((mmol/m<sup>3</sup>)/day)/(W/m<sup>2</sup>)) and 20 (mmol/m<sup>3</sup>/day), respectively.
+First, set the initial concentration of oxygen in the water column (**oxy\_ic**). Next, set the parameters of the light efficiency (**a\_param**) and ecosystem respiration (**er\_param**). Equilibrium values for **oxy\_ic**, **a\_param**, and **er\_param** are 250 (mmol/m<sup>3</sup>), 0.2 ((mmol/m<sup>3</sup>)/day)/(W/m<sup>2</sup>)), and 20 (mmol/m<sup>3</sup>/day), respectively.
 
 ``` r
 # Set model parameters
+oxy_ic <- 250           # (mmol/m^3), initial oxygen concentration
 a_param <- 0.2          # ((mmol/m^3)/day)/(W/m^2), light efficiency
 er_param <- 20          # (mmol/m^3/day), ecosystem respiration
 ```
@@ -78,6 +79,7 @@ Recommendations for the ranges of the input parameters and forcings and their eq
 
 |    Input    | Min | Max | Equilibrium |
 |:-----------:|:---:|:---:|:-----------:|
+|   oxy\_ic   | 100 | 300 |     250     |
 |   a\_param  | 0.1 | 1.0 |     0.2     |
 |  er\_param  |  0  |  80 |      20     |
 |  ht\_const  | 0.5 | 5.0 |     3.0     |
@@ -90,8 +92,9 @@ Recommendations for the ranges of the input parameters and forcings and their eq
 Once the inputs of the parameters and the forcings are set, you can now run the model. Before running the model select a unique name so that you can easily identify the results of this specific run. This object will store the results of the model outputs (here, example is used as the object). To include the argument values set for the constant parameters and forcings, you must call them in the function as shown here:
 
 ``` r
-example <- fwoxy(a_param = a_param, er_param = er_param, ht_in = ht_const, 
-      salt_in = salt_const, temp_in = temp_const, wspd_in = wspd_const)
+example <- fwoxy(oxy_ic = oxy_ic, a_param = a_param, er_param = er_param, 
+                 ht_in = ht_const, salt_in = salt_const, temp_in = temp_const,
+                 wspd_in = wspd_const)
 ```
 
 ## Outputs
