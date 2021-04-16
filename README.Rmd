@@ -95,7 +95,7 @@ example <- fwoxy(oxy_ic = oxy_ic, a_param = a_param, er_param = er_param,
 ##Outputs
 The forward model will output a data frame to the R environment that can be saved as a .csv file in the working directory using the following code: 
 ```{r, eval = F}
-write.csv(example, "example.csv")
+write.csv(example, "example.csv", row.names = FALSE)
 ```
 In addition to the data frame, the fwoxy function will create two plots in the Plots view in RStudio (see examples below). The top figure is the forward oxygen concentration time series versus time. This plot illustrates how the dissolved oxygen concentration (mmol/m^3^) in the water column will change due to the parameters and forcings of the model. The bottom figure is a plot of daily fluxes (mmol/m^3^/day) of the time rate of change of oxygen (dcdtd), the ecosystem respiration (erd), the gas exchange (gasexd), and the gross primary productivity (gppd) versus time. Neither of these plots will be automatically output to the working drive and will need to be saved by the user.    
 
