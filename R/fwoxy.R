@@ -145,8 +145,8 @@ gasexd <- gasex * spd
 
 ## Save data
 
-varb <- c('time, sec', 'oxy, mmol/m3', 'troc, mmol/m3/d', 'gasex, mmol/m3/d', 'gpp, mmol/m3/d',
-          'er, mmol/m3/d','oxysu, mmol/m3', 'wspd2, m2/s2', 'sc', 'kw, m/s')
+varb <- c('time_sec', 'oxy_mmol/m3', 'troc_mmol/m3/d', 'gasex_mmol/m3/d', 'gpp_mmol/m3/d',
+          'er_mmol/m3/d','oxysu_mmol/m3', 'wspd2_m2/s2', 'sc', 'kw_m/s')
 results <- data.frame(t, c, dcdtd, gasexd, gppd, erd, oxysu, wspd2, sc, kw)
 colnames(results) <- varb
 # write.csv(results, paste0(run_name, '.csv'))
