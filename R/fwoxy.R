@@ -23,6 +23,9 @@
 #' @param wspd_in
 #'
 #' @import ggplot2
+#' @import grid
+#' @import gridExtra
+#' @import lattice
 #' @import tidyr
 #'
 #' @return 2 plots and a data frame
@@ -34,6 +37,9 @@ fwoxy <- function(oxy_ic = oxy_ic, a_param = a_param, er_param = er_param, ht_in
 
 # Setting Parameters ------------------------------------------------------
 # library(ggplot2)
+# library(grid)
+# library(gridExtra)
+# library(lattice)
 # library(tidyr)
 
 # Model inputs
@@ -60,13 +66,25 @@ nt <- length(t)         # number of time steps
 
 # Set up forcing vectors to match the number of time steps
 
-# Currently set to run with variable constants, need to add if else statements
-# to use with vectors
-
+# if(ht_in == 'ht_const')
 ht <- matrix(1, ncol = nt, nrow = 1) * ht_in
+# if(ht_in == 'ht_ts')
+#ht <-
+
+# if(wspd_in == 'wspd_const')
 wspd <- matrix(1, ncol = nt, nrow = 1) * wspd_in
+# if(wspd_in == 'wspd_ts')
+#wspd <-
+
+# if(temp_in == 'temp_const')
 temp <- matrix(1, ncol = nt, nrow = 1) * temp_in
+# if(temp_in == 'temp_ts')
+#temp <-
+
+# if(salt_in == 'salt_const')
 salt <- matrix(1, ncol = nt, nrow = 1) * salt_in
+# if(salt_in == 'salt_ts')
+#salt <-
 
 # Allocate output vectors to match the number of time steps
 

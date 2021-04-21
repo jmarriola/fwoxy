@@ -59,7 +59,7 @@ salt_const <- 25
 temp_const <- 25
 wspd_const <- 3
 
-fwoxy(a_param = a_param, er_param = er_param,
+fwoxy(oxy_ic = oxy_ic, a_param = a_param, er_param = er_param,
 ht_in = ht_const, salt_in = salt_const, temp_in = temp_const,
 wspd_in = wspd_const)
 }}
