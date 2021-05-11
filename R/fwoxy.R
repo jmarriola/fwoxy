@@ -31,7 +31,7 @@
 #' @return 2 plots and a data frame
 #' @export
 #'
-fwoxy <- function(oxy_ic = oxy_ic, a_param = a_param, er_param = er_param, ht_in = c('ht_const','ht_ts'),
+fwoxy <- function(oxy_ic = oxy_ic, a_param = a_param, er_param = er_param, ht_in = ht_const,
                   salt_in = salt_const, temp_in = temp_const, wspd_in = wspd_const)
 {
 
@@ -69,7 +69,7 @@ nt <- length(t)         # number of time steps
 #ht_in <- match.arg(ht_in)
 
 #if(ht_in == 'ht_const')
-  ht <- matrix(1, ncol = nt, nrow = 1) * ht_in
+ht <- matrix(1, ncol = nt, nrow = 1) * ht_in
 #if(ht_in == 'ht_ts')
   #ht <- 2 * sin((pi/12*t) + 10) + 2
 
