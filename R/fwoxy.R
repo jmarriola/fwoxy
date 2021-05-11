@@ -31,7 +31,7 @@
 #' @return 2 plots and a data frame
 #' @export
 #'
-fwoxy <- function(oxy_ic = oxy_ic, a_param = a_param, er_param = er_param, ht_in = ht_const,
+fwoxy <- function(oxy_ic = oxy_ic, a_param = a_param, er_param = er_param, ht_in = c('ht_const','ht_ts'),
                   salt_in = salt_const, temp_in = temp_const, wspd_in = wspd_const)
 {
 
