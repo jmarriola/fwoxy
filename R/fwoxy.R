@@ -64,7 +64,8 @@ tend <- ndays * spd     # time of the end of the model run
 t <- seq(from = 1, to = tend, by = dt)      # create time vector
 nt <- length(t)         # number of time steps
 
-# Set up forcing vectors to match the number of time steps
+# Set up forcing vectors to match the number of time steps or
+# use time series in lieu of constants (currently not activated)
 
 if(ht_in == 'ht_const')
   ht <- matrix(1, ncol = nt, nrow = 1) * ht_in
