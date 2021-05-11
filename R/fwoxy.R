@@ -66,10 +66,10 @@ nt <- length(t)         # number of time steps
 
 # Set up forcing vectors to match the number of time steps
 
-# if(ht_in == 'ht_const')
-ht <- matrix(1, ncol = nt, nrow = 1) * ht_in
-# if(ht_in == 'ht_ts')
-#ht <-
+if(ht_in == 'ht_const')
+  ht <- matrix(1, ncol = nt, nrow = 1) * ht_in
+if(ht_in == 'ht_ts')
+  ht <- 2 * sin((pi/12*t) + 10) + 2
 
 # if(wspd_in == 'wspd_const')
 wspd <- matrix(1, ncol = nt, nrow = 1) * wspd_in
