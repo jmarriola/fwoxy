@@ -66,6 +66,7 @@ nt <- length(t)         # number of time steps
 
 # Set up forcing vectors to match the number of time steps or
 # use time series in lieu of constants (currently not activated)
+ht_in <- match.arg(ht_in)
 
 if(ht_in == 'ht_const')
   ht <- matrix(1, ncol = nt, nrow = 1) * ht_in
