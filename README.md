@@ -5,6 +5,8 @@
 
 ##### Email: <jva5648@psu.edu>
 
+[![R-CMD-check](https://github.com/jmarriola/fwoxy/workflows/R-CMD-check/badge.svg)](https://github.com/jmarriola/fwoxy/actions)
+
 ## Description
 
 This R package, **fwoxy**, is a simple forward oxygen mass balance model that predicts the oxygen concentration of a well-mixed water column given the initial conditions and forcings. The primary use of this model is as a lab component for a marine biogeochemistry course to further understanding of biogeochemical and physical processes that influence ecosystem metabolism.
@@ -15,16 +17,6 @@ The development version of this package can be installed from Github:
 install.packages('devtools')
 library(devtools)
 devtools::install_github('jmarriola/fwoxy')
-```
-
-After installation of the fwoxy.R package, install packages **ggplot2**, **grid**, **gridExtra**, **lattice**, and **tidyr** to ensure smooth running of the package:
-
-``` r
-install.packages('ggplot2')
-install.packages('grid')
-install.packages('gridExtra')
-install.packages('lattice')
-install.packages('tidyr')
 ```
 
 ### Functions
@@ -41,15 +33,10 @@ There are six functions included in this package:
 
 ## Running fwoxy
 
-Before identifying parameters for the model, load associated libraries needed for fwoxy.R to run:
+Before identifying parameters for the model, load fwoxy for fwoxy.R to run:
 
 ``` r
 library(fwoxy)
-library(ggplot2)
-library(grid)
-library(gridExtra)
-library(lattice)
-library(tidyr)
 ```
 
 ### Inputs: Parameters and forcings of the model

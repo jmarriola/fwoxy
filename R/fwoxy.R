@@ -1,26 +1,28 @@
-# Main program for the forward oxygen model (fwoxy)
-
-# OXYGEN BUDGET: TROC = GPP - ER - GASEX
-# Positive gas flux is from water to air
-
-# USES FUNCTIONS:
-# fun_par_sin_model
-# fun_eqb_oxygen
-# fun_density
-# fun_schmidt_oxygen
-# fun_gas_transfer_velocity
-
-# INPUT: oxygen concentration, time variables, initial conditions, forcing, parameters
-
-# OUTPUT: oxygen concentration, TROC, GPP, ER, GASEX
+#' Main program for the forward oxygen model (fwoxy)
 #'
-#' @param oxy_ic
-#' @param a_param
-#' @param er_param
-#' @param ht_in
-#' @param salt_in
-#' @param temp_in
-#' @param wspd_in
+#' @details
+#'
+#' OXYGEN BUDGET: TROC = GPP - ER - GASEX
+#' Positive gas flux is from water to air
+#'
+#' USES FUNCTIONS:
+#' fun_par_sin_model
+#' fun_eqb_oxygen
+#' fun_density
+#' fun_schmidt_oxygen
+#' fun_gas_transfer_velocity
+#'
+#' INPUT: oxygen concentration, time variables, initial conditions, forcing, parameters
+#'
+#' OUTPUT: oxygen concentration, TROC, GPP, ER, GASEX
+#'
+#' @param oxy_ic numeric for initial oxygen concentration, mmol/m3
+#' @param a_param numeric for light efficiency, (mmol/m3/d)/(W/m2)
+#' @param er_param numeric for ecosystem respiration, mmol/m3/day
+#' @param ht_in numeric for water column height, m
+#' @param salt_in numeric for salinity, ppt
+#' @param temp_in numeric for water temperature, C
+#' @param wspd_in numeric for windspeed at 10 m, m/s
 #'
 #' @import ggplot2
 #' @import grid
