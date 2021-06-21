@@ -1,22 +1,24 @@
-# Gas transfer velocity calculation
-#
-# Adapted from Matlab to R by Jill Arriola, 2021-03-16
-#
-# THIS FUNCTION CALCULATES THE GAS TRANSFER VELOCITY ACROSS THE AIR-SEA
-# INTERFACE FOR OXYGEN BASED ON THE WANNINKHOF (2014) EQUATION
-#
-# Reference:
-# WANNINKHOF, R., LIMNOLOGY AND OCEANOGRAPHY METHODS, 12(6), 351-362, 2014.
-#
-# INPUTS ARE
-# sc = Schmidt number (unitless)
-# wspd2 = Windspeed squared (m^2/s^2)
-# **Inputs come from fwoxy.R as vectors**
-#
-# OUTPUT IS kw (m/s)
+#' Gas transfer velocity calculation
 #'
-#' @param sc
-#' @param wspd2
+#' @details
+#'
+#' Adapted from Matlab to R by Jill Arriola, 2021-03-16
+#'
+#' THIS FUNCTION CALCULATES THE GAS TRANSFER VELOCITY ACROSS THE AIR-SEA
+#' INTERFACE FOR OXYGEN BASED ON THE WANNINKHOF (2014) EQUATION
+#'
+#' Reference:
+#' WANNINKHOF, R., LIMNOLOGY AND OCEANOGRAPHY METHODS, 12(6), 351-362, 2014.
+#'
+#' INPUTS ARE
+#' sc = Schmidt number (unitless)
+#' wspd2 = Windspeed squared (m^2/s^2)
+#' **Inputs come from fwoxy.R as vectors**
+#'
+#' OUTPUT IS kw (m/s)
+#'
+#' @param sc numeric for Schmidt number
+#' @param wspd2 numeric for windspeed
 #'
 #' @return kw (m/s)
 #' @export

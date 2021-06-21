@@ -1,25 +1,27 @@
-# Oxygen saturation
-#
-# Adapted from Matlab to R by Jill Arriola, 2021-03-16
-#
-# Function to calclulate equilibrium OXYGEN concentration in seawater
-# from SST [C] and SSS [PSU].
-#
-# Reference:
-# Garcia, H., and L.I. Gordon (1992), Oxygen solubility in seawater:
-# Better fitting equations, Limnol. Oceanogr., 376, 1307-1312.
-#
-# INPUTS
-# temp = in situ temperature [deg C]
-# salt = in situ salinity [PSU]
-#
-# OUTPUTS
-# oxysat = oxygen saturation (mmol/m^3)
-#
-# USES: fun_density(temp, salt)
+#' Oxygen saturation
 #'
-#' @param temp
-#' @param salt
+#' @details
+#'
+#' Adapted from Matlab to R by Jill Arriola, 2021-03-16
+#'
+#' Function to calclulate equilibrium OXYGEN concentration in seawater
+#' from SST [C] and SSS [PSU].
+#'
+#' Reference:
+#' Garcia, H., and L.I. Gordon (1992), Oxygen solubility in seawater:
+#' Better fitting equations, Limnol. Oceanogr., 376, 1307-1312.
+#'
+#' INPUTS
+#' temp = in situ temperature [deg C]
+#' salt = in situ salinity [PSU]
+#'
+#' OUTPUTS
+#' oxysat = oxygen saturation (mmol/m^3)
+#'
+#' USES: fun_density(temp, salt)
+#'
+#' @param temp numeric for temperature
+#' @param salt numeric for salinity
 #'
 #' @return oxysat (mmol/m^3)
 #' @export

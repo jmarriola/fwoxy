@@ -1,12 +1,14 @@
-# Schmidt number calculation
-#
-# Adapted from Matlab to R by Jill Arriola, 2021-03-16
-#
-# THIS FUNCTION IS USED TO CALCULATE THE SCHMIDT NUMBER FOR THE AIR-SEA GAS
-# TRANSFER VELOCITY COMPONENT OF fwoxy.R
-#
-#' @param temp
-#' @param salt
+#' Schmidt number calculation
+#'
+#' @details
+#'
+#' Adapted from Matlab to R by Jill Arriola, 2021-03-16
+#'
+#' THIS FUNCTION IS USED TO CALCULATE THE SCHMIDT NUMBER FOR THE AIR-SEA GAS
+#' TRANSFER VELOCITY COMPONENT OF fwoxy.R
+#'
+#' @param temp numeric for temperature
+#' @param salt numeric for salinity
 #'
 #' @return sc (unitless)
 #' @export

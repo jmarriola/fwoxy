@@ -1,25 +1,27 @@
-# Seawater density calculation
-#
-# Adapted from Matlab code by Jill Arriola, 2021-03-16
-#
-# THIS FUNCTION COMPUTES DENSITY OF SEAWATER ACCORDING TO THE
-# INTERNATIONALLY ACCEPTED (UNESCO) EQUATIONS.
-#
-# Reference:
-# MILLERO AND POISSON, DEEP-SEA RESEARCH, 28A, 625-629, 1981.
-#
-# THE STANDARD ERROR OF THIS EQUATION IS 3.6 X 10-3 KG/M-3.
-#
-# INPUTS ARE
-# temp = Water Temperature (DEG. C)
-# salt = Salinity (PPT)
-# P = Pressure above atmospheric (dbar)
-#
-# OUTPUT IS RHO = Density (kg/m^3)
+#' Seawater density calculation
 #'
-#' @param temp
-#' @param salt
-#' @param P
+#' @details
+#'
+#' Adapted from Matlab code by Jill Arriola, 2021-03-16
+#'
+#' THIS FUNCTION COMPUTES DENSITY OF SEAWATER ACCORDING TO THE
+#' INTERNATIONALLY ACCEPTED (UNESCO) EQUATIONS.
+#'
+#' Reference:
+#' MILLERO AND POISSON, DEEP-SEA RESEARCH, 28A, 625-629, 1981.
+#'
+#' THE STANDARD ERROR OF THIS EQUATION IS 3.6 X 10-3 KG/M-3.
+#'
+#' INPUTS ARE
+#' temp = Water Temperature (DEG. C)
+#' salt = Salinity (PPT)
+#' P = Pressure above atmospheric (dbar)
+#'
+#' OUTPUT IS RHO = Density (kg/m^3)
+#'
+#' @param temp numeric for temperature
+#' @param salt numeric for salinity
+#' @param P numeric for pressure above atmospheric (dbar)
 #'
 #' @return RHO (kg/m^3)
 #' @export

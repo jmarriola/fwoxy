@@ -8,8 +8,16 @@ Description: This model simulates estuarine net ecosystem metabolism based on da
     Florida, National Estuarine Research Reserve. The model allows for changing parameters of metabolism, such as wind
     speed, temperature, respiration, and water depth. This package includes source functions fun_density, fun_eqb_oxygen, 
     fun_gas_transfer_velocity, fun_par_sin_model, and fun_schmidt_oxygen.
+Imports: 
+  ggplot2, 
+  grid,
+  gridExtra, 
+  lattice,
+  tidyr
+Depends: 
+  R (>= 3.6)
 BugReports: https://github.com/jmarriola/fwoxy/issues
 License: CC0
 Encoding: UTF-8
 LazyData: true
-Imports: ggplot2, tidyr, utils
+RoxygenNote: 7.1.1

@@ -1,16 +1,18 @@
-# Sin model of PAR
-#
-# Adapated from Matlab to R by Jill Arriola, 2021-03-16
-#
-# IDEALIZED SIN MODEL OF PHOTOSYNTHETIC ACTIVE RADIATION (PAR) IN MILITARY TIME
-# BASED ON DATA RETRIEVED FROM APALACHICOLA BAY, FLORIDA, 2012
-#
-# Max = 400 W/m^2 at 12:00 and zero PAR between 18:00 and 6:00
-#
-# INPUT: time (seconds) starting at midnight on day 1
-# OUTPUT: par (W/m^2)
-#
-#' @param t
+#' Sin model of PAR
+#'
+#' @details
+#'
+#' Adapated from Matlab to R by Jill Arriola, 2021-03-16
+#'
+#' IDEALIZED SIN MODEL OF PHOTOSYNTHETIC ACTIVE RADIATION (PAR) IN MILITARY TIME
+#' BASED ON DATA RETRIEVED FROM APALACHICOLA BAY, FLORIDA, 2012
+#'
+#' Max = 400 W/m^2 at 12:00 and zero PAR between 18:00 and 6:00
+#'
+#' INPUT: time (seconds) starting at midnight on day 1
+#' OUTPUT: par (W/m^2)
+#'
+#' @param t numeric for time
 #'
 #' @return PAR (W/m^2)
 #' @export
