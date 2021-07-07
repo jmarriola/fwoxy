@@ -10,9 +10,8 @@ Description: This model simulates estuarine net ecosystem metabolism based on da
     fun_gas_transfer_velocity, fun_par_sin_model, and fun_schmidt_oxygen.
 Imports: 
   ggplot2, 
-  grid,
-  gridExtra, 
   lattice,
+  patchwork,
   tidyr
 Depends: 
   R (>= 3.6)
