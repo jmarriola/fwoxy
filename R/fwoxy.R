@@ -25,9 +25,8 @@
 #' @param wspd_in numeric for windspeed at 10 m, m/s
 #'
 #' @import ggplot2
-#' @import grid
-#' @import gridExtra
 #' @import lattice
+#' @import patchwork
 #' @import tidyr
 #'
 #' @return 2 plots and a data frame
@@ -200,7 +199,8 @@ fluxPlot <- ggplot(resultsNew, aes(x = t, y = Value, group = Variables, color = 
   scale_color_manual(values = colors) +
   scale_x_continuous(breaks = breaks, labels = labels)
 
-grid.arrange(oxyPlot, fluxPlot, ncol = 1)
+p <- oxyPlot + fluxPlot + plot_layout(ncol = 1)
+print(p)
 #print(fluxPlot)
 
 
