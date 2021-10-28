@@ -4,12 +4,16 @@
 \alias{fun_gas_transfer_velocity}
 \title{Gas transfer velocity calculation}
 \usage{
-fun_gas_transfer_velocity(sc, wspd2)
+fun_gas_transfer_velocity(sc, wspd2, agas_param = 0.251, gas_inv = -0.5)
 }
 \arguments{
 \item{sc}{numeric for Schmidt number}
 
 \item{wspd2}{numeric for windspeed}
+
+\item{agas_param}{numeric for the a coefficient}
+
+\item{gas_inv}{numeric for the inverse exponent function}
 }
 \value{
 kw (m/s)

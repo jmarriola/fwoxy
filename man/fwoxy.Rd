@@ -11,7 +11,9 @@ fwoxy(
   ht_in = ht_const,
   salt_in = salt_const,
   temp_in = temp_const,
-  wspd_in = wspd_const
+  wspd_in = wspd_const,
+  agas_param = 0.251,
+  gas_inv = -0.5
 )
 }
 \arguments{
@@ -28,6 +30,10 @@ fwoxy(
 \item{temp_in}{numeric for water temperature, C}
 
 \item{wspd_in}{numeric for windspeed at 10 m, m/s}
+
+\item{agas_param}{numeric for the a coefficient, passed to \code{\link{fun_gas_transfer_velocity}}}
+
+\item{gas_inv}{numeric for the inverse exponent function, passed to \code{\link{fun_gas_transfer_velocity}}}
 }
 \value{
 2 plots and a data frame

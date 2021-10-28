@@ -19,19 +19,18 @@
 #'
 #' @param sc numeric for Schmidt number
 #' @param wspd2 numeric for windspeed
+#' @param agas_param numeric for the a coefficient
+#' @param gas_inv numeric for the inverse exponent function
 #'
 #' @return kw (m/s)
 #' @export
 #'
-fun_gas_transfer_velocity <- function(sc, wspd2){
+fun_gas_transfer_velocity <- function(sc, wspd2, agas_param = 0.251, gas_inv = -0.5){
 
-  a <- 0.251 # DO NOT CHANGE
-
-
-  kw <- a * wspd2 * ((sc / 660) ^(-0.5)) # cm/hr
+  kw <- agas_param * wspd2 * ((sc / 660) ^(gas_inv)) # cm/hr
   kw  <- kw/(100*60*60) # convert from cm/hr to m/s
 
-return(kw)
+  return(kw)
 
 }
 

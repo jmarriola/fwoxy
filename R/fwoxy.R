@@ -23,6 +23,8 @@
 #' @param salt_in numeric for salinity, ppt
 #' @param temp_in numeric for water temperature, C
 #' @param wspd_in numeric for windspeed at 10 m, m/s
+#' @param agas_param numeric for the a coefficient, passed to \code{\link{fun_gas_transfer_velocity}}
+#' @param gas_inv numeric for the inverse exponent function, passed to \code{\link{fun_gas_transfer_velocity}}
 #'
 #' @import ggplot2
 #' @import lattice
@@ -33,7 +35,8 @@
 #' @export
 #'
 fwoxy <- function(oxy_ic = oxy_ic, a_param = a_param, er_param = er_param, ht_in = ht_const,
-                  salt_in = salt_const, temp_in = temp_const, wspd_in = wspd_const)
+                  salt_in = salt_const, temp_in = temp_const, wspd_in = wspd_const,
+                  agas_param = 0.251, gas_inv = -0.5)
 {
 
 # Setting Parameters ------------------------------------------------------
@@ -119,7 +122,7 @@ for (i in 1:(nt))
   oxysu[i] <- cin - oxysat[i]
   wspd2[i] <- wspd[i] * wspd[i]
   sc[i] <- fun_schmidt_oxygen(temp[i], salt[i])
-  kw[i] <- fun_gas_transfer_velocity(sc[i], wspd2[i])
+  kw[i] <- fun_gas_transfer_velocity(sc[i], wspd2[i], agas_param, gas_inv)
   ge[i] <- kw[i] * oxysu[i]           # mmol/m2/s
   gasex[i] <- ge[i] / ht[i]           # mmol/m3/s
 
