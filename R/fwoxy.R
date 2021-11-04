@@ -25,18 +25,19 @@
 #' @param wspd_in numeric for windspeed at 10 m, m/s
 #' @param agas_param numeric for the a coefficient, passed to \code{\link{fun_gas_transfer_velocity}}
 #' @param gas_inv numeric for the inverse exponent function, passed to \code{\link{fun_gas_transfer_velocity}}
+#' @param plot logical if plot is printed in addition to results data frame
 #'
 #' @import ggplot2
 #' @import lattice
 #' @import patchwork
 #' @import tidyr
 #'
-#' @return 2 plots and a data frame
+#' @return 2 plots and a data frame if \code{plot = TRUE}, otherwise just a data frame
 #' @export
 #'
 fwoxy <- function(oxy_ic = oxy_ic, a_param = a_param, er_param = er_param, ht_in = ht_const,
                   salt_in = salt_const, temp_in = temp_const, wspd_in = wspd_const,
-                  agas_param = 0.251, gas_inv = -0.5)
+                  agas_param = 0.251, gas_inv = -0.5, plot = TRUE)
 {
 
 # Setting Parameters ------------------------------------------------------
@@ -203,7 +204,9 @@ fluxPlot <- ggplot(resultsNew, aes(x = t, y = Value, group = Variables, color = 
   scale_x_continuous(breaks = breaks, labels = labels)
 
 p <- oxyPlot + fluxPlot + plot_layout(ncol = 1)
-print(p)
+
+if(plot)
+  print(p)
 #print(fluxPlot)
 
 

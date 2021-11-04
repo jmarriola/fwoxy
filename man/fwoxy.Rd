@@ -13,7 +13,8 @@ fwoxy(
   temp_in = temp_const,
   wspd_in = wspd_const,
   agas_param = 0.251,
-  gas_inv = -0.5
+  gas_inv = -0.5,
+  plot = TRUE
 )
 }
 \arguments{
@@ -34,9 +35,11 @@ fwoxy(
 \item{agas_param}{numeric for the a coefficient, passed to \code{\link{fun_gas_transfer_velocity}}}
 
 \item{gas_inv}{numeric for the inverse exponent function, passed to \code{\link{fun_gas_transfer_velocity}}}
+
+\item{plot}{logical if plot is printed in addition to results data frame}
 }
 \value{
-2 plots and a data frame
+2 plots and a data frame if \code{plot = TRUE}, otherwise just a data frame
 }
 \description{
 Main program for the forward oxygen model (fwoxy)
