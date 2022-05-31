@@ -183,9 +183,9 @@ colnames(results) <- varb
 ## Plots
 
 # Plot of oxygen concentration and flux time series in same window
-labels <- c('1'='0','43201'='12','86401'='0','129601'='12','172801'='0',
-            '216001'='12','259201'='0','302401'='12','345601'='0','388801'='12',
-            '432001'='0','475201'='12')
+labels <- c('0'='0','43200'='12','86400'='0','129600'='12','172800'='0',
+            '216000'='12','259200'='0','302400'='12','345600'='0','388800'='12',
+            '432000'='0','475200'='12')
 breaks <- seq(1,518400,by=43200)
 colors <- c(gasexd = "red3", gppd = "orange", erd = "purple4", dcdtd = "steelblue3")
 fluxes <- data.frame(t, gasexd, gppd, erd, dcdtd)
