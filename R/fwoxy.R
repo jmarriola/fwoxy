@@ -66,7 +66,7 @@ spd <- 60 * 60 * 24     # seconds per day
 
 dt <- dt_min * spm      # convert from min to seconds
 tend <- ndays * spd     # time of the end of the model run
-t <- seq(from = 1, to = tend, by = dt)      # create time vector
+t <- seq(from = 0, to = tend, by = dt)      # create time vector
 nt <- length(t)         # number of time steps
 
 # Set up forcing vectors to match the number of time steps or
