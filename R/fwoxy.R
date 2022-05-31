@@ -114,7 +114,7 @@ cin <- oxy_ic
 
 # Initialize output
 
-c(1) <- oxy_ic
+c[1] <- oxy_ic
 
 # Forward integration (loop over time steps)
 
