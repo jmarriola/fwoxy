@@ -112,9 +112,13 @@ c <- rep(NA,nt)         # mmol/m3, oxygen concentration
 
 cin <- oxy_ic
 
+# Initialize output
+
+c(1) <- oxy_ic
+
 # Forward integration (loop over time steps)
 
-for (i in 1:(nt))
+for (i in 2:(nt))
 {
 
   # Calculate gas exchange
