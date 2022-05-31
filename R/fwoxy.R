@@ -118,7 +118,7 @@ c[1] <- oxy_ic
 
 # Forward integration (loop over time steps)
 
-for (i in 2:(nt))
+for (i in 1:(nt))
 {
 
   # Calculate gas exchange
