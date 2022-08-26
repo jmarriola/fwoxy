@@ -186,11 +186,10 @@ colnames(results) <- varb
 labels <- c('0'='0','43200'='12','86400'='0','129600'='12','172800'='0',
             '216000'='12','259200'='0','302400'='12','345600'='0','388800'='12',
             '432000'='0','475200'='12')
-breaks <- seq(0,518400,by=43200)
+breaks <- seq(0,475200,by=43200)
 colors <- c(gasexd = "red3", gppd = "orange", erd = "purple4", dcdtd = "steelblue3")
 fluxes <- data.frame(t, gasexd, gppd, erd, dcdtd)
 resultsNew <- fluxes %>% pivot_longer(cols = gasexd:dcdtd, names_to = 'Variables', values_to = "Value")
-
 
 oxyPlot <- ggplot(results, aes(x = t, y = c)) +
   geom_line(colour = "blue") +
