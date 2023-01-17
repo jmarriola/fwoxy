@@ -1,7 +1,7 @@
 
 # fwoxy.R
 
-#### Jill M. Arriola and Maria Herrmann
+#### Jill M. Arriola, Maria Herrmann, and Marcus Beck
 
 ##### Email: <jva5648@psu.edu>
 
