@@ -2,7 +2,7 @@ Package: fwoxy
 Type: Package
 Title: Forward model of estuary dissolved oxygen time series 
 Version: 0.1
-Author: Arriola, J.M. & Herrmann, M.
+Author: Arriola, J.M. & Herrmann, M. & Beck, M.W.
 Maintainer: Jill Arriola <jva5648@psu.edu>
 Description: This model simulates estuarine net ecosystem metabolism based on data retrieved from the Apalachicola Bay,
     Florida, National Estuarine Research Reserve. The model allows for changing parameters of metabolism, such as wind
